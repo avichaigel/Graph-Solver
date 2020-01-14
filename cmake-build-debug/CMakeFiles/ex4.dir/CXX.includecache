@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/avichai/CLionProjects/ex4/CacheManager.cpp
+CacheManager.h
+/home/avichai/CLionProjects/ex4/CacheManager.h
+
+/home/avichai/CLionProjects/ex4/CacheManager.h
+
+/home/avichai/CLionProjects/ex4/FileCacheManager.cpp
+FileCacheManager.h
+/home/avichai/CLionProjects/ex4/FileCacheManager.h
+
+/home/avichai/CLionProjects/ex4/FileCacheManager.h
+CacheManager.h
+/home/avichai/CLionProjects/ex4/CacheManager.h
+
