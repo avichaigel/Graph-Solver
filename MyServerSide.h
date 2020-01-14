@@ -8,7 +8,8 @@
 #include "Server.h"
 
 class MySerivalServer : public server_side::Server {
-
+    void open(int port, ClientHandler c) override ;
+    void close() override ;
 };
 
 #endif //EX4_MYSERVERSIDE_H
