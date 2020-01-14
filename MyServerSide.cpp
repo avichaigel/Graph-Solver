@@ -41,13 +41,15 @@ void start(int port, ClientHandler c) {
         int addrlen = sizeof(address);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
 
+        //todo create timeout (maybe above accept?)
+
         if (client_socket == -1) {
             cerr << "Error accepting client" << endl;
         } else {
             cout << "Connected" << endl;
         }
 
-        c.setClientSocketfd(client_socket);
+        c.handleCLient(client_socket);
         close(socketfd); //closing the listening socket
     }
 }

@@ -3,7 +3,3 @@
 //
 
 #include "ClientHandler.h"
-
-void ClientHandler::setClientSocketfd(int clientSocketfd) {
-    client_socketfd = clientSocketfd;
-}
