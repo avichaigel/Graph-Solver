@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/99/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/ofirn93/Downloads/clion-2019.2.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/ofirn93/Downloads/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/avichai/CLionProjects/ex4
+CMAKE_SOURCE_DIR = /home/ofirn93/CLionProjects/Solver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/avichai/CLionProjects/ex4/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ofirn93/CLionProjects/Solver/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/avichai/CLionProjects/ex4/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/99/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/ofirn93/Downloads/clion-2019.2.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/ofirn93/Downloads/clion-2019.2.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles /home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles /home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -204,33 +204,6 @@ FileCacheManager.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.s
 .PHONY : FileCacheManager.cpp.s
 
-MyServerSide.o: MyServerSide.cpp.o
-
-.PHONY : MyServerSide.o
-
-# target to build an object file
-MyServerSide.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyServerSide.cpp.o
-.PHONY : MyServerSide.cpp.o
-
-MyServerSide.i: MyServerSide.cpp.i
-
-.PHONY : MyServerSide.i
-
-# target to preprocess a source file
-MyServerSide.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyServerSide.cpp.i
-.PHONY : MyServerSide.cpp.i
-
-MyServerSide.s: MyServerSide.cpp.s
-
-.PHONY : MyServerSide.s
-
-# target to generate assembly for a file
-MyServerSide.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyServerSide.cpp.s
-.PHONY : MyServerSide.cpp.s
-
 MyTestClientHandler.o: MyTestClientHandler.cpp.o
 
 .PHONY : MyTestClientHandler.o
@@ -285,6 +258,33 @@ Solver.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Solver.cpp.s
 .PHONY : Solver.cpp.s
 
+StringReverser.o: StringReverser.cpp.o
+
+.PHONY : StringReverser.o
+
+# target to build an object file
+StringReverser.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/StringReverser.cpp.o
+.PHONY : StringReverser.cpp.o
+
+StringReverser.i: StringReverser.cpp.i
+
+.PHONY : StringReverser.i
+
+# target to preprocess a source file
+StringReverser.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/StringReverser.cpp.i
+.PHONY : StringReverser.cpp.i
+
+StringReverser.s: StringReverser.cpp.s
+
+.PHONY : StringReverser.s
+
+# target to generate assembly for a file
+StringReverser.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/StringReverser.cpp.s
+.PHONY : StringReverser.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -330,15 +330,15 @@ help:
 	@echo "... FileCacheManager.o"
 	@echo "... FileCacheManager.i"
 	@echo "... FileCacheManager.s"
-	@echo "... MyServerSide.o"
-	@echo "... MyServerSide.i"
-	@echo "... MyServerSide.s"
 	@echo "... MyTestClientHandler.o"
 	@echo "... MyTestClientHandler.i"
 	@echo "... MyTestClientHandler.s"
 	@echo "... Solver.o"
 	@echo "... Solver.i"
 	@echo "... Solver.s"
+	@echo "... StringReverser.o"
+	@echo "... StringReverser.i"
+	@echo "... StringReverser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

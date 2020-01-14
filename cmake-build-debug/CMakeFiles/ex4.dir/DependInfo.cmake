@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/avichai/CLionProjects/ex4/CacheManager.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/CacheManager.cpp.o"
-  "/home/avichai/CLionProjects/ex4/ClientHandler.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/ClientHandler.cpp.o"
-  "/home/avichai/CLionProjects/ex4/FileCacheManager.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
-  "/home/avichai/CLionProjects/ex4/MyServerSide.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/MyServerSide.cpp.o"
-  "/home/avichai/CLionProjects/ex4/MyTestClientHandler.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
-  "/home/avichai/CLionProjects/ex4/Solver.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/Solver.cpp.o"
-  "/home/avichai/CLionProjects/ex4/main.cpp" "/home/avichai/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/main.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/CacheManager.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/CacheManager.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/ClientHandler.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/ClientHandler.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/FileCacheManager.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/MyTestClientHandler.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/Solver.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/Solver.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/StringReverser.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/StringReverser.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/main.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
