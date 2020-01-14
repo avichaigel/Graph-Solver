@@ -5,11 +5,21 @@
 #ifndef EX4_CACHEMANAGER_H
 #define EX4_CACHEMANAGER_H
 
+#include <string>
+#include <list>
+#include <unordered_map>
+
+using namespace std;
+
 template <typename P, typename S>
 class CacheManager {
-    virtual void add(S solution);
-    virtual void search(P problem);
-    virtual void get(S solution);
+protected:
+    unordered_map<string, string> cache;
+    list<string> lruList;
+    unsigned int capacity{};
+public:
+    virtual void insert(S solution) = 0;
+    virtual S get(P problem) = 0;
 };
 
 
