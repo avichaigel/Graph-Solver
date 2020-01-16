@@ -6,9 +6,18 @@
 #define EX4_MYTESTCLIENTHANDLER_H
 
 #include "ClientHandler.h"
+#include "CacheManager.h"
+#include "FileCacheManager.h"
+#include "Solver.h"
 
 class MyTestClientHandler : public ClientHandler{
-
+private:
+    Solver<string, string> solver;
+    CacheManager<string, string> cm;
+    bool isReading = true;
+public:
+    MyTestClientHandler(Solver<string, string>, CacheManager<string, string>);
+    void handleCLient(int client_socketfd) override;
 };
 
 

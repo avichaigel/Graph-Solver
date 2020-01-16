@@ -9,7 +9,8 @@ using namespace std;
 
 template <typename P, typename S>
 class Solver {
-    virtual S solve(P problem) = 0;
+public:
+    virtual S solve(P problem);
 };
 
 

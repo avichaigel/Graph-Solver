@@ -12,8 +12,7 @@ using namespace std;
 
 class ClientHandler {
 public:
-    void setClientSocketfd(int clientSocketfd);
-    virtual void handleCLient(istream input, fstream output);
+    virtual void handleCLient(int client_socketfd);
 };
 
 

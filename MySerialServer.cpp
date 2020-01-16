@@ -7,7 +7,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include "MyServerSide.h"
+#include "MySerialServer.h"
 
 
 void start(int port, ClientHandler c) {
@@ -54,11 +54,12 @@ void start(int port, ClientHandler c) {
     }
 }
 
-void MySerivalServer::open(int port, ClientHandler c) {
+void MySerialServer::open(int port, ClientHandler c) {
     //call the thread that listens to the simulator and updates values
     thread thread1(start, port, c);
     thread1.detach();
 }
 
-void MySerivalServer::close() {
+void MySerialServer::close() {
+    //todo implement this: change the flag in the while to false, and close the socket
 }

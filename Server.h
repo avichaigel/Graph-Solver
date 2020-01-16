@@ -11,8 +11,8 @@ using namespace std;
 
 namespace server_side {
     class Server {
-        virtual void open(int port, ClientHandler c) = 0;
-        virtual void close() = 0;
+        virtual void open(int port, ClientHandler c);
+        virtual void close();
     };
 }
 
