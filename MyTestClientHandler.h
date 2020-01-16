@@ -12,12 +12,11 @@
 
 class MyTestClientHandler : public ClientHandler{
 private:
-    Solver<string, string> solver;
-    CacheManager<string, string> cm;
-    bool isReading = true;
+    Solver<string, string>* solver;
+    CacheManager<string, string>* cm;
 public:
-    MyTestClientHandler(Solver<string, string>, CacheManager<string, string>);
-    void handleCLient(int client_socketfd) override;
+    MyTestClientHandler(Solver<string, string>*, CacheManager<string, string>*);
+    void handleClient(int client_socketfd) override;
 };
 
 

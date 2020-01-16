@@ -13,7 +13,7 @@
 class MySerialServer : public server_side::Server {
 private:
 public:
-    void open(int port, ClientHandler c) override ;
+    void open(int port, ClientHandler* c) override ;
     void close() override ;
 };
 

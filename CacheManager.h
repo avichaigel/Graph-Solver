@@ -18,8 +18,8 @@ protected:
     list<string> lruList;
     unsigned int capacity{};
 public:
-    virtual void insert(S solution);
-    virtual S get(P problem);
+    virtual void insert(S solution) = 0;
+    virtual S get(P problem) = 0;
 };
 
 
