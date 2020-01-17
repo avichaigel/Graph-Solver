@@ -56,7 +56,7 @@ string FileCacheManager::get(string problem) {
      * in the meantime, i save in my own map the problem as key and the representative string of it as value.
      * then i add...*/
     if (this->prob2str.empty()) {
-        return NULL;
+        return nullptr;
     }
     if (this->prob2str.find(problem) != this->prob2str.cend()) {
         string filename = this->prob2str.at(problem);
@@ -75,7 +75,7 @@ string FileCacheManager::get(string problem) {
         name.append("Data" + to_string(this->count) + ".txt");
         this->prob2str.insert({problem, name});
         setCurrVal(name);
-        return NULL;
+        return nullptr;
     }
 
     /*auto it = sol2str.find(key);
@@ -119,9 +119,8 @@ void FileCacheManager::setCount(int num) {
 void FileCacheManager::mapSaver(string solution) {
     string mapFile = "mapSaver.txt";
     string output;
-    output.append("{" + )
+    output.append("{" + this->currVal + "," + solution + "}" + "$");
     ofstream myFile(mapFile);
-
-
-
+    myFile << output;
+    myFile.close();
 }

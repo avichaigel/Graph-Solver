@@ -9,7 +9,7 @@ using namespace std;
 
 #include <string>
 #include "CacheManager.h"
-#include "string.h"
+#include <cstring>
 #include <string>
 #include <unordered_map>
 #include <list>
@@ -20,9 +20,6 @@ using namespace std;
 
 class FileCacheManager : public CacheManager<string, string> {
     int count;
-public:
-    void setCount(int count);
-
 private:
     string currVal;
 public:
@@ -31,7 +28,7 @@ public:
 public:
     void insert(string solution) override ;
     string get(string problem) override;
-
+    void setCount(int count);
     void mapSaver(string solution);
 };
 
