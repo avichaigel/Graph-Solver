@@ -12,7 +12,7 @@ using namespace std;
 
 class ClientHandler {
 public:
-    virtual void handleCLient(int client_socketfd);
+    virtual void handleClient(int client_socketfd) = 0;
 };
 
 

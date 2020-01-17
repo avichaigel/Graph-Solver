@@ -3,14 +3,13 @@
 //
 
 #include <thread>
-#include <bits/socket.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
 #include "MySerialServer.h"
 
 
-void start(int port, ClientHandler c) {
+void start(int port, ClientHandler* c) {
     while (true) {
         //create socket
         int socketfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -49,12 +48,12 @@ void start(int port, ClientHandler c) {
             cout << "Connected" << endl;
         }
 
-        c.handleCLient(client_socket);
+        c->handleClient(client_socket);
         close(socketfd); //closing the listening socket
     }
 }
 
-void MySerialServer::open(int port, ClientHandler c) {
+void MySerialServer::open(int port, ClientHandler* c) {
     //call the thread that listens to the simulator and updates values
     thread thread1(start, port, c);
     thread1.detach();
