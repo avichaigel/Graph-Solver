@@ -3,16 +3,13 @@
 //
 
 #include "FileCacheManager.h"
+#include <sstream>
 
 void FileCacheManager::insert(string solution) {
     string filename = this->currVal;
     ofstream myFile(filename);
     myFile << solution;
     myFile.close();
-    mapSaver(solution);
-
-
-
     /*this->count++;
     string key;
     key.append("Data");
@@ -56,6 +53,20 @@ string FileCacheManager::get(string problem) {
      * in the meantime, i save in my own map the problem as key and the representative string of it as value.
      * then i add...*/
     if (this->prob2str.empty()) {
+        ifstream myFile("mapSaver.txt");
+        if (!myFile) {
+            setCount(0);
+            return nullptr;
+        }
+        string line;
+        while (getline(myFile, line)) {
+            istringstream iss(line);
+            string token;
+            while (getline(iss, token, '$')) {
+                pairSplit(token);
+            }
+        }
+
         return nullptr;
     }
     if (this->prob2str.find(problem) != this->prob2str.cend()) {
@@ -75,6 +86,7 @@ string FileCacheManager::get(string problem) {
         name.append("Data" + to_string(this->count) + ".txt");
         this->prob2str.insert({problem, name});
         setCurrVal(name);
+        mapSaver(problem);
         return nullptr;
     }
 
@@ -116,11 +128,27 @@ void FileCacheManager::setCount(int num) {
     this->count = num;
 }
 
-void FileCacheManager::mapSaver(string solution) {
+/*
+ * in this function we save the map that connects between problem to
+ * */
+void FileCacheManager::mapSaver(string problem) {
     string mapFile = "mapSaver.txt";
     string output;
-    output.append("{" + this->currVal + "," + solution + "}" + "$");
+    output.append(this->currVal + "," + problem + "$");
     ofstream myFile(mapFile);
     myFile << output;
     myFile.close();
+}
+
+void FileCacheManager::pairSplit(string pair) {
+    string delim = ",";
+    // key and value
+    string k, v;
+    size_t pos = 0;
+    while ((pos = pair.find(delim)) != string::npos) {
+        k = pair.substr(0, pos);
+        pair.erase(0, pos + delim.length());
+        v = pair.substr(0, pos);
+        this->prob2str.insert({k, v});
+    }
 }
