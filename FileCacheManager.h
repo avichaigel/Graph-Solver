@@ -30,7 +30,7 @@ public:
     string get(string problem) override;
     void setCount(int count);
     void mapSaver(string solution);
-
+    void startMap();
     void pairSplit(string pair);
 };
 

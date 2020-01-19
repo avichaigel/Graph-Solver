@@ -53,25 +53,12 @@ string FileCacheManager::get(string problem) {
      * in the meantime, i save in my own map the problem as key and the representative string of it as value.
      * then i add...*/
     if (this->prob2str.empty()) {
-        ifstream myFile("mapSaver.txt");
-        if (!myFile) {
-            // when it's our first run ever
-            setCount(0);
-            return nullptr;
-        }
-        //idea from: https://stackoverflow.com/questions/289347/using-strtok-with-a-stdstring
-        string line;
-        while (getline(myFile, line)) {
-            istringstream iss(line);
-            string token;
-            while (getline(iss, token, '$')) {
-                pairSplit(token);
-            }
-        }
+        startMap();
         if (problem == "start") {
             // when we run the program and we have already solved some problems in old runs
-            return nullptr;
+            return "done";
         }
+
     }
     if (this->prob2str.find(problem) != this->prob2str.cend()) {
         string filename = this->prob2str.at(problem);
@@ -159,4 +146,22 @@ void FileCacheManager::pairSplit(string pair) {
         this->count++;
     }
     this->count--;
+}
+
+void FileCacheManager::startMap() {
+    ifstream myFile("mapSaver.txt");
+    if (!myFile) {
+        // when it's our first run ever
+        setCount(0);
+        return;
+    }
+    //idea from: https://stackoverflow.com/questions/289347/using-strtok-with-a-stdstring
+    string line;
+    while (getline(myFile, line)) {
+        istringstream iss(line);
+        string token;
+        while (getline(iss, token, '$')) {
+            pairSplit(token);
+        }
+    }
 }
