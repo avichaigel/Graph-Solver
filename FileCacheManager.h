@@ -19,7 +19,7 @@ using namespace std;
 #include <functional>
 
 class FileCacheManager : public CacheManager<string, string> {
-    int count;
+    int count = 0;
 private:
     string currVal;
 public:
@@ -30,7 +30,7 @@ public:
     string get(string problem) override;
     void setCount(int count);
     void mapSaver(string solution);
-
+    void startMap();
     void pairSplit(string pair);
 };
 
