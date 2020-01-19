@@ -150,33 +150,6 @@ CacheManager.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheManager.cpp.s
 .PHONY : CacheManager.cpp.s
 
-ClientHandler.o: ClientHandler.cpp.o
-
-.PHONY : ClientHandler.o
-
-# target to build an object file
-ClientHandler.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/ClientHandler.cpp.o
-.PHONY : ClientHandler.cpp.o
-
-ClientHandler.i: ClientHandler.cpp.i
-
-.PHONY : ClientHandler.i
-
-# target to preprocess a source file
-ClientHandler.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/ClientHandler.cpp.i
-.PHONY : ClientHandler.cpp.i
-
-ClientHandler.s: ClientHandler.cpp.s
-
-.PHONY : ClientHandler.s
-
-# target to generate assembly for a file
-ClientHandler.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/ClientHandler.cpp.s
-.PHONY : ClientHandler.cpp.s
-
 FileCacheManager.o: FileCacheManager.cpp.o
 
 .PHONY : FileCacheManager.o
@@ -203,6 +176,33 @@ FileCacheManager.s: FileCacheManager.cpp.s
 FileCacheManager.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.s
 .PHONY : FileCacheManager.cpp.s
+
+MySerialServer.o: MySerialServer.cpp.o
+
+.PHONY : MySerialServer.o
+
+# target to build an object file
+MySerialServer.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MySerialServer.cpp.o
+.PHONY : MySerialServer.cpp.o
+
+MySerialServer.i: MySerialServer.cpp.i
+
+.PHONY : MySerialServer.i
+
+# target to preprocess a source file
+MySerialServer.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MySerialServer.cpp.i
+.PHONY : MySerialServer.cpp.i
+
+MySerialServer.s: MySerialServer.cpp.s
+
+.PHONY : MySerialServer.s
+
+# target to generate assembly for a file
+MySerialServer.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MySerialServer.cpp.s
+.PHONY : MySerialServer.cpp.s
 
 MyTestClientHandler.o: MyTestClientHandler.cpp.o
 
@@ -324,12 +324,12 @@ help:
 	@echo "... CacheManager.o"
 	@echo "... CacheManager.i"
 	@echo "... CacheManager.s"
-	@echo "... ClientHandler.o"
-	@echo "... ClientHandler.i"
-	@echo "... ClientHandler.s"
 	@echo "... FileCacheManager.o"
 	@echo "... FileCacheManager.i"
 	@echo "... FileCacheManager.s"
+	@echo "... MySerialServer.o"
+	@echo "... MySerialServer.i"
+	@echo "... MySerialServer.s"
 	@echo "... MyTestClientHandler.o"
 	@echo "... MyTestClientHandler.i"
 	@echo "... MyTestClientHandler.s"

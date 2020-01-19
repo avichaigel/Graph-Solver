@@ -84,13 +84,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Boot.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/CacheManager.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/CacheManager.h">
-			<Option target="ex4"/>
-		</Unit>
-		<Unit filename="/home/ofirn93/CLionProjects/Solver/ClientHandler.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/ClientHandler.h">
@@ -102,16 +102,34 @@
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/FileCacheManager.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/ISearchable.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MySerialServer.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MySerialServer.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyTestClientHandler.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyTestClientHandler.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Searcher.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Server.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/Solver.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/Solver.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/State.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/StringReverser.cpp">

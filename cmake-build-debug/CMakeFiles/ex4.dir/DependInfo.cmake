@@ -5,8 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ofirn93/CLionProjects/Solver/CacheManager.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/CacheManager.cpp.o"
-  "/home/ofirn93/CLionProjects/Solver/ClientHandler.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/ClientHandler.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/FileCacheManager.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/MySerialServer.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MySerialServer.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/MyTestClientHandler.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/Solver.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/Solver.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/StringReverser.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/StringReverser.cpp.o"
