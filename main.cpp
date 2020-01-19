@@ -5,7 +5,6 @@
 
 
 int main(int argc, char* argv[]) {
-    // todo ofir: this is where i need to initiate fileCacheManager, read the problem->name map (+set count) from its file
     auto myCache = new FileCacheManager();
     myCache->get("start");
     boot::Main main1;

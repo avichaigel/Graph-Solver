@@ -5,7 +5,6 @@
 #include "FileCacheManager.h"
 #include <sstream>
 
-//todo ofir: take care of initializing count from file
 void FileCacheManager::insert(string solution) {
     string filename = this->currVal;
     ofstream myFile(filename);
