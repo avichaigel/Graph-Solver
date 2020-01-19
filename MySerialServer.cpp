@@ -4,6 +4,7 @@
 
 #include <thread>
 #include <sys/socket.h>
+#include <sys/time.h>
 #include <netinet/in.h>
 #include <unistd.h>
 #include "MySerialServer.h"
@@ -36,11 +37,18 @@ void start(int port, ClientHandler* c) {
             cout << "Server is now listening ..." << endl;
         }
 
+        /* Start a timer that expires after 2 minutes */
+        struct itimerval timer;
+        timer.it_value.tv_sec = 120;
+        timer.it_value.tv_usec = 0;
+        timer.it_interval.tv_sec = 0;
+        timer.it_interval.tv_usec = 0;
+        setitimer (ITIMER_VIRTUAL, &timer, 0);
+        //todo check that it expires after 2 minutes sharp
+
         // accepting a client
         int addrlen = sizeof(address);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
-
-        //todo create timeout (maybe above accept?)
 
         if (client_socket == -1) {
             cerr << "Error accepting client" << endl;
