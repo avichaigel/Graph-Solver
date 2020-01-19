@@ -6,4 +6,4 @@ set(CMAKE_CXX_FLAGS -pthread)
 
 add_executable(ex4 main.cpp CacheManager.cpp CacheManager.h ClientHandler.h FileCacheManager.cpp FileCacheManager.h
         MySerialServer.cpp MySerialServer.h Server.h Solver.cpp Solver.h StringReverser.cpp StringReverser.h Boot.h
-        MyTestClientHandler.h MyTestClientHandler.cpp State.h ISearchable.h Searcher.h)
+        MyTestClientHandler.h MyTestClientHandler.cpp MyMatrixClientHandler.cpp MyMatrixClientHandler.h Matrix.cpp Matrix.h)
