@@ -10,7 +10,7 @@
 #include <netinet/in.h>
 
 MyTestClientHandler::MyTestClientHandler(Solver<string, string>*, CacheManager<string, string>*):
-solver(solver), cm(cm){} //todo handle these warnings
+solver(solver), cm(cm){}
 
 void MyTestClientHandler::handleClient(int client_socketfd) {
     //loop reads line by  line, until line is "end"
