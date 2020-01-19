@@ -5,6 +5,7 @@
 #include "FileCacheManager.h"
 #include <sstream>
 
+//todo ofir: take care of initializing count from file
 void FileCacheManager::insert(string solution) {
     string filename = this->currVal;
     ofstream myFile(filename);
@@ -55,9 +56,11 @@ string FileCacheManager::get(string problem) {
     if (this->prob2str.empty()) {
         ifstream myFile("mapSaver.txt");
         if (!myFile) {
+            // when it's our first run ever
             setCount(0);
             return nullptr;
         }
+        //idea from: https://stackoverflow.com/questions/289347/using-strtok-with-a-stdstring
         string line;
         while (getline(myFile, line)) {
             istringstream iss(line);
@@ -66,8 +69,10 @@ string FileCacheManager::get(string problem) {
                 pairSplit(token);
             }
         }
-
-        return nullptr;
+        if (problem == "start") {
+            // when we run the program and we have already solved some problems in old runs
+            return nullptr;
+        }
     }
     if (this->prob2str.find(problem) != this->prob2str.cend()) {
         string filename = this->prob2str.at(problem);
@@ -140,6 +145,8 @@ void FileCacheManager::mapSaver(string problem) {
     myFile.close();
 }
 
+
+// idea from https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
 void FileCacheManager::pairSplit(string pair) {
     string delim = ",";
     // key and value
@@ -150,5 +157,7 @@ void FileCacheManager::pairSplit(string pair) {
         pair.erase(0, pos + delim.length());
         v = pair.substr(0, pos);
         this->prob2str.insert({k, v});
+        this->count++;
     }
+    this->count--;
 }

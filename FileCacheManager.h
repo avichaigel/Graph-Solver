@@ -19,7 +19,7 @@ using namespace std;
 #include <functional>
 
 class FileCacheManager : public CacheManager<string, string> {
-    int count;
+    int count = 0;
 private:
     string currVal;
 public:
