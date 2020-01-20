@@ -9,7 +9,7 @@
 #include "Solver.h"
 #include "CacheManager.h"
 #include "StringReverser.h"
-#include "MyTestClientHandler.h"
+#include "MyMatrixClientHandler.h"
 
 namespace boot {
     class Main {
@@ -17,7 +17,7 @@ namespace boot {
         void main(int port) {
             Solver<string, string>* solver = new StringReverser();
             CacheManager<string, string>* cm = new FileCacheManager();
-            ClientHandler* handler = new MyTestClientHandler(solver, cm);
+            ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
            server_side::Server* server = new MySerialServer();
            server->open(port, handler);
         }

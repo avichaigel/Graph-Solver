@@ -20,8 +20,11 @@ void MyTestClientHandler::handleClient(int client_socketfd) {
         if (valread < 1) {
             cerr << "Error while reading from client" << endl;
         }
-        string problem(buffer);
-
+        string prob(buffer);
+        size_t n = prob.find("\n");
+        string problem = prob.substr(0, n);
+        ///test
+        cout << problem << endl; //todo erase test
         if (problem == "end") {
             break;
         }
