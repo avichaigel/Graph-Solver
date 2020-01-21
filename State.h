@@ -8,7 +8,7 @@
 template <typename T>
 class State {
     T state;
-    double cost;
+    double cost{};
     State<T> *cameFrom;
 
 public:
