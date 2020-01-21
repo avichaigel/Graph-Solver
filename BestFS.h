@@ -21,11 +21,28 @@ public:
         while (this->openQueueSize() > 0) {
             State<T> *n = this->openQueue.pop();
             this->myStates.push_back(n);
+//            this->myStates.insert(this->myStates.begin(), n);
+//            https://stackoverflow.com/questions/13324431/c-vectors-insert-push-back-difference
+
+            // if you reached your goal
             if (s->isGoalState(n)) {
                 // return best path
                 return this->bestPath(n,s);
             }
+            vector<State<T>*> states = s->getAllPossibleStates(n);
+            for (State<T> *node : states) {
+                if ((this->myStates.find(node) == this->myStates.cend) && !(this->openQueue.openQueueContains(node))) {
+                    //emplace of the neighbors not push
+                    // https://stackoverflow.com/questions/35518611/difference-between-queues-emplace-and-push
+                    node->setCameFrom(n);
+                    this->openQueue.emplace(node);
+                } else {
 
+                }
+
+
+
+            }
         }
 
 
