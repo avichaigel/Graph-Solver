@@ -12,7 +12,7 @@ class State {
     State<T> *cameFrom;
 
 public:
-    State(T myState, double myCost) {
+        State(T myState, double myCost) {
         this->state = myState;
         this->cost = myCost;
         this->cameFrom = nullptr;
