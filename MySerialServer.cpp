@@ -23,12 +23,13 @@ void start(int port, ClientHandler* c) {
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY; //give me any IP allocated for my machine
     address.sin_port = htons(5600); //we need to convert our number to a number that the network understands
+    //todo change the port to be a variable that receives the port from the python script
 
     //the actual bind command
     if (bind(socketfd, (struct sockaddr *) &address, sizeof(address)) == -1) {
         cerr << "Could not bind the socket to an IP" << endl;
     }
-    while (true) {
+    while (true) { //todo check when and how I end this loop
 
         //making socket listen to the port
         if (listen(socketfd, 5) == -1) { //can also set to SOMAXCON (max connections)

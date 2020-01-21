@@ -3,12 +3,6 @@
 //
 
 #include "MyMatrixClientHandler.h"
-
-//
-// Created by avichai on 14/01/2020.
-//
-
-#include "MyTestClientHandler.h"
 #include "Matrix.h"
 #include <sys/socket.h>
 #include <string>
@@ -20,13 +14,15 @@
 MyMatrixClientHandler::MyMatrixClientHandler(Solver<string, string>*, CacheManager<string, string>*):
         solver(solver), cm(cm){}
 
-void MyMatrixClientHandler::handleClient(int client_socketfd) {
-    vector<string> lineInMatrix = readFromBuffer(client_socketfd);
-    Matrix* matrix = createMatrix(lineInMatrix);
+void MyMatrixClientHandler::handleClient(int client_socketfd) { //todo go over this te see it's correct and full
+    vector<string> matrixLines = readFromBuffer(client_socketfd); //every node in the vector is a line of the matrix, except for the last two
+    string problem;
+    for (const auto &piece : matrixLines) problem += piece;
     string solution = cm->get(problem);
 
     if (solution.empty()) {
-        solution = solver->solve(problem);
+        Matrix* matrix = createMatrix(matrixLines);
+        solution = solver->solve(matrix); //todo change solver in this header, so that it receives generic type (or Matrix?)
         cm->insert(solution);
     }
     int is_sent = send(client_socketfd, solution.c_str(), solution.length(), 0);
@@ -53,13 +49,34 @@ vector<string> MyMatrixClientHandler::readFromBuffer(int client_socketfd) {
                 break;
             }
             line.push_back(problem);
+            problem = "";
         }
     }
     return line;
 }
 
-Matrix* MyMatrixClientHandler::createMatrix(vector<string> line) {
-
+Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
+    auto* matrix = new Matrix();
+    int i=0, j=0, size = matrixLines.size();
+    for (string str : matrixLines) {
+        i++;
+        j=0;
+        if (i+2 == size) {
+            break;
+        }
+        vector<State<Point*>*> line;
+        matrix->getOuter().push_back(line);
+        for (char c : str) {
+            if (c == ',' || c == ' ') {
+                continue;
+            }
+            j++;
+            Point* p = new Point(i, j);
+            State<Point*>* state = new State<Point*>(p, c-48);
+            line.push_back(state);
+        }
+    }
+    return matrix;
 }
 
 

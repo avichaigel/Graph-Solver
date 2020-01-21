@@ -20,8 +20,8 @@ private:
 public:
     MyMatrixClientHandler(Solver<string, string>*, CacheManager<string, string>*);
     void handleClient(int client_socketfd) override;
-    vector<string> readFromBuffer(int client_socketfd);
-    Matrix *createMatrix(vector<string> line);
+    static vector<string> readFromBuffer(int client_socketfd);
+    Matrix* createMatrix(vector<string> line);
 };
 
 
