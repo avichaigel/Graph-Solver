@@ -10,10 +10,26 @@
 template<typename T>
 class BestFS: public SearchByPQ<T> {
 public:
+
     vector<State<T>*> search(ISearchable<T> *s) override {
         this->myStates.clear();
+        this->setNodeEval(0);
+        while (!this->openQueue.empty()) {
+            this->openQueue.pop();
+        }
+        this->addOpenQueue(s->getInitialState());
+        while (this->openQueueSize() > 0) {
+            State<T> *n = this->openQueue.pop();
+            this->myStates.push_back(n);
+            if (s->isGoalState(n)) {
+                // return best path
+                return this->bestPath(n,s);
+            }
 
-        //return vector<State<T> *>();
+        }
+
+
+
     }
 };
 
