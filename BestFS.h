@@ -37,6 +37,9 @@ public:
                     node->setCameFrom(n);
                     this->openQueue.emplace(node);
                 } else {
+                    if (this->openQueue.openQueueContains(node)) {
+
+                    }
 
                 }
 
