@@ -19,7 +19,9 @@ public:
         }
         this->addOpenQueue(s->getInitialState());
         while (this->openQueueSize() > 0) {
-            State<T> *n = this->openQueue.pop();
+            State<T> *n = this->openQueue.top();
+            this->openQueue.pop();
+            this->nodeEval++;
             this->myStates.push_back(n);
 //            this->myStates.insert(this->myStates.begin(), n);
 //            https://stackoverflow.com/questions/13324431/c-vectors-insert-push-back-difference
@@ -39,23 +41,21 @@ public:
                     if (node->getFather() != nullptr) {
                         node->setPathCost(node->getCost() + node->getFather()->getPathCost());
                     }
-                    this->openQueue.push(node);
+                    this->openQueue.emplace(node);
                 } else {
                     if (newPathCost < node->getPathCost()) {
                         node->setCameFrom(n);
                         node->setPathCost(newPathCost);
-                        if (this->openQueue.openQueueContains(node)) {
+                        this->openQueue.emplace(node);
+                        /*if (this->openQueue.openQueueContains(node)) {
                             this->openQueue.emplace(node);
                         } else {
-                            this->openQueue.push(node);
-                        }
+                            this->openQueue.emplace(node);
+                        }*/
                     }
                 }
             }
         }
-
-
-
     }
 };
 
