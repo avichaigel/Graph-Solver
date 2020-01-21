@@ -31,20 +31,26 @@ public:
             }
             vector<State<T>*> states = s->getAllPossibleStates(n);
             for (State<T> *node : states) {
+                double newPathCost = n->getPathCost() + node->getCost();
                 if ((this->myStates.find(node) == this->myStates.cend) && !(this->openQueue.openQueueContains(node))) {
                     //emplace of the neighbors not push
                     // https://stackoverflow.com/questions/35518611/difference-between-queues-emplace-and-push
                     node->setCameFrom(n);
-                    this->openQueue.emplace(node);
-                } else {
-                    if (this->openQueue.openQueueContains(node)) {
-
+                    if (node->getFather() != nullptr) {
+                        node->setPathCost(node->getCost() + node->getFather()->getPathCost());
                     }
-
+                    this->openQueue.push(node);
+                } else {
+                    if (newPathCost < node->getPathCost()) {
+                        node->setCameFrom(n);
+                        node->setPathCost(newPathCost);
+                        if (this->openQueue.openQueueContains(node)) {
+                            this->openQueue.emplace(node);
+                        } else {
+                            this->openQueue.push(node);
+                        }
+                    }
                 }
-
-
-
             }
         }
 
