@@ -34,7 +34,7 @@ public:
             vector<State<T>*> states = s->getAllPossibleStates(n);
             for (State<T> *node : states) {
                 double newPathCost = n->getPathCost() + node->getCost();
-                if ((this->myStates.find(node) == this->myStates.cend) && !(this->openQueue.openQueueContains(node))) {
+                if ((this->myStates.find(node) == this->myStates.cend) && !(this->openQueueContains(node))) {
                     //emplace of the neighbors not push
                     // https://stackoverflow.com/questions/35518611/difference-between-queues-emplace-and-push
                     node->setCameFrom(n);
