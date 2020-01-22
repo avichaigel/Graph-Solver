@@ -34,13 +34,29 @@ public:
         return this->openQueue.size();
     }
 
-    /*bool openQueueContains(State<T> *s) {
-        for(auto it = this->openQueue.begin(); it != this->openQueue.end(); it++){
-            if(s->equals(*it))
-                return true;
+    bool openQueueContains(State<T> *s) {
+        int flag = 0;
+        State<T>* tmpS;
+        // temporary queue
+        priority_queue<State<T>*, vector<State<T>*>, CostsCompare<T>>  tmpQ;
+        while (!this->openQueue.empty()) {
+            tmpS = this->openQueue.top();
+            this->openQueue.pop();
+            tmpQ.push(tmpS);
+            if(s->equals(tmpS)) {
+                flag = 1;
+            }
+        }
+        while (!tmpQ.empty()) {
+            tmpS = tmpQ.top();
+            tmpQ.pop();
+            this->openQueue.push(tmpS);
+        }
+        if (flag) {
+            return true;
         }
         return false;
-    }*/
+    }
 
     void addOpenQueue(State<T> *s){
         this->openQueue.push(s);

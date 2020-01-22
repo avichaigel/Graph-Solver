@@ -10,13 +10,20 @@ class State {
     T state;
     double cost{};
     State<T> *cameFrom;
+    double pathCost{};
 
 public:
-        State(T myState, double myCost) {
+    State(T myState, double myCost) {
         this->state = myState;
-        this->cost = myCost;
+        setCost(myCost);
         this->cameFrom = nullptr;
+        setPathCost(0);
     }
+
+    double getPathCost() {
+        return this->pathCost;
+    }
+
     void setCost(double myCost) {
         this->cost = myCost;
     }
@@ -29,6 +36,11 @@ public:
     double getCost() {
         return this->cost;
     }
+
+    void setPathCost(double pc) {
+        this->pathCost = pc;
+    }
+
     State<T>* getFather(){
         return this->cameFrom;
     }
