@@ -24,9 +24,9 @@ string Matrix::to_string() {
 }
 
 void Matrix::setInitialState(State<Point*> *initial) {
-    Matrix::initialState = initial;
+    this->initialState = initial;
 }
 
 void Matrix::setGoalState(State<Point*> *goal) {
-    Matrix::goalState = goal;
+    this->goalState = goal;
 }

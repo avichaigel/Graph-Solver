@@ -5,7 +5,9 @@
 #ifndef EX4_BESTFS_H
 #define EX4_BESTFS_H
 
+#include <algorithm>
 #include "SearchByPQ.h"
+using namespace std;
 
 template<typename T>
 class BestFS: public SearchByPQ<T> {
@@ -32,9 +34,11 @@ public:
                 return this->bestPath(n,s);
             }
             vector<State<T>*> states = s->getAllPossibleStates(n);
-            for (State<T> *node : states) {
+            for (State<T>* node : states) {
                 double newPathCost = n->getPathCost() + node->getCost();
-                if ((this->myStates.find(node) == this->myStates.cend) && !(this->openQueueContains(node))) {
+                if ((this->myStates.find(node) == this->myStates.end) && !(this->openQueueContains(node))) {
+//                vector<State<T>*>::iterator it = find_if(this->myStates.begin(), this->myStates.end(), node);
+//                if ((it == this->myStates.end()) && !(this->openQueueContains(node))) {
                     //emplace of the neighbors not push
                     // https://stackoverflow.com/questions/35518611/difference-between-queues-emplace-and-push
                     node->setCameFrom(n);
