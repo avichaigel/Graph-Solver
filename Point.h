@@ -9,12 +9,9 @@
 class Point {
 private:
     int x, y;
-
 public:
     int getX() const;
-
     int getY() const;
-
     Point(int x, int y);
 };
 

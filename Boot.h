@@ -10,16 +10,25 @@
 #include "CacheManager.h"
 #include "StringReverser.h"
 #include "MyMatrixClientHandler.h"
+#include "MatrixSolver.h"
+#include "BestFS.h"
 
 namespace boot {
     class Main {
     public:
         void main(int port) {
-            Solver<string, string>* solver = new StringReverser();
+            Searcher<Matrix*>* searcher = new BestFS<Matrix*>();
+            Solver<ISearchable<Matrix*>*, string>* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
-           server_side::Server* server = new MySerialServer();
-           server->open(port, handler);
+            server_side::Server* server = new MySerialServer();
+            ///test
+            string solution = cm->get("hello");
+            if (solution.empty())
+                cout << solution << endl;
+            ///end test //todo erase test
+            server->open(port, handler);
+
         }
     };
 }

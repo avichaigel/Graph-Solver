@@ -15,10 +15,10 @@
 
 class MyMatrixClientHandler : public ClientHandler {
 private:
-    Solver<string, string>* solver;
+    Solver<Matrix*, string>* solver;
     CacheManager<string, string>* cm;
 public:
-    MyMatrixClientHandler(Solver<string, string>*, CacheManager<string, string>*);
+    MyMatrixClientHandler(Solver<ISearchable<Matrix*>*, string>*, CacheManager<string, string>*);
     void handleClient(int client_socketfd) override;
     static vector<string> readFromBuffer(int client_socketfd);
     Matrix* createMatrix(vector<string> line);
