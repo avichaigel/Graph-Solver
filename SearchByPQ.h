@@ -19,7 +19,7 @@ protected:
 
 public:
     SearchByPQ() {
-        this->nodeEval = 0;
+        this->setNodeEval(0);
     }
 
     void setNodeEval(int eval) {
@@ -52,10 +52,15 @@ public:
             tmpQ.pop();
             this->openQueue.push(tmpS);
         }
-        if (flag) {
+        return flag != 0;
+        /*      ^
+         *      |
+         *simplification
+         *
+         * if (flag) {
             return true;
         }
-        return false;
+        return false;*/
     }
 
     void addOpenQueue(State<T> *s){
