@@ -78,7 +78,7 @@ string FileCacheManager::get(string problem) {
         this->prob2str.insert({problem, name});
         setCurrVal(name);
         mapSaver(problem);
-        return nullptr;
+        return "";
     }
 
     /*auto it = sol2str.find(key);
