@@ -17,8 +17,8 @@ namespace boot {
     class Main {
     public:
         void main(int port) {
-            Searcher<Matrix*>* searcher = new BestFS<Matrix*>();
-            Solver<ISearchable<Matrix*>*, string>* solver = new MatrixSolver(searcher);
+            Searcher<Point>* searcher = new BestFS<Point>();
+            MatrixSolver* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
             server_side::Server* server = new MySerialServer();

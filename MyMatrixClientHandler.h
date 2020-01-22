@@ -12,13 +12,19 @@
 #include "FileCacheManager.h"
 #include "Solver.h"
 #include "Matrix.h"
+#include "MatrixSolver.h"
 
 class MyMatrixClientHandler : public ClientHandler {
 private:
-    Solver<Matrix*, string>* solver;
+    MatrixSolver* solver;
     CacheManager<string, string>* cm;
 public:
-    MyMatrixClientHandler(Solver<ISearchable<Matrix*>*, string>*, CacheManager<string, string>*);
+    MatrixSolver* getSolver() const;
+
+    CacheManager<string, string> *getCm() const;
+
+public:
+    MyMatrixClientHandler(MatrixSolver* solver1, CacheManager<string, string>* cm1);
     void handleClient(int client_socketfd) override;
     static vector<string> readFromBuffer(int client_socketfd);
     Matrix* createMatrix(vector<string> line);

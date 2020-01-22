@@ -15,13 +15,13 @@ using namespace std;
 
 //Object Adapter
 
-class MatrixSolver : public Solver<ISearchable<Matrix*>*, string>{
+class MatrixSolver : public Solver<ISearchable<Point>*, string>{
 private:
-    Searcher<Matrix*>* searcher{};
+    Searcher<Point>* searcher;
 public:
-    explicit MatrixSolver(Searcher<Matrix*> *searcher) : searcher(searcher) {}
+    explicit MatrixSolver(Searcher<Point> *searcher) : searcher(searcher) {}
 
-    string solve(ISearchable<Matrix*> *problem) override {
+    string solve(ISearchable<Point> *problem) override {
         searcher->search(problem);
     }
 };

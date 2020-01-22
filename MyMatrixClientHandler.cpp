@@ -12,20 +12,22 @@
 #include <vector>
 #include <algorithm>
 
-MyMatrixClientHandler::MyMatrixClientHandler(Solver<ISearchable<Matrix*>*, string>*, CacheManager<string, string>*):
-        solver(solver), cm(cm){}
+MyMatrixClientHandler::MyMatrixClientHandler(MatrixSolver* solver1, CacheManager<string, string>* cm1) {
+    this->cm = cm1;
+    this->solver = solver1;
+}
 
 void MyMatrixClientHandler::handleClient(int client_socketfd) { //todo go over this te see that it's correct and full
     vector<string> matrixLines = readFromBuffer(client_socketfd); //every node in the vector is a line of the matrix, except for the last two
     string problem;
     for (const auto &piece : matrixLines) problem += piece;
     problem.erase(remove(problem.begin(), problem.end(), ' '), problem.end());
-    string solution = cm->get(problem);
+    string solution = getCm()->get(problem);
 
     if (solution.empty()) {
         Matrix* matrix = createMatrix(matrixLines);
-        solution = solver->solve(matrix);
-        cm->insert(solution);
+        solution = getSolver()->solve(matrix);
+        getCm()->insert(solution);
     }
     int is_sent = send(client_socketfd, solution.c_str(), solution.length(), 0);
     if (is_sent == -1) {
@@ -60,7 +62,7 @@ vector<string> MyMatrixClientHandler::readFromBuffer(int client_socketfd) {
 //create a vector of vectors of <State<Point*>>* of the vector of strings,
 //in which each string is a line in the matrix
 Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
-    auto* matrix = new Matrix();
+    Matrix* matrix = new Matrix();
     int i=0, j=0, size = matrixLines.size();
     for (string str : matrixLines) {
         j=0;
@@ -108,6 +110,14 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
         i++;
     }
     return matrix;
+}
+
+MatrixSolver *MyMatrixClientHandler::getSolver() const {
+    return solver;
+}
+
+CacheManager<string, string> *MyMatrixClientHandler::getCm() const {
+    return cm;
 }
 
 
