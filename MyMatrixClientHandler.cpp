@@ -12,20 +12,20 @@
 #include <vector>
 #include <algorithm>
 
-MyMatrixClientHandler::MyMatrixClientHandler(Solver<string, string>*, CacheManager<string, string>*):
+MyMatrixClientHandler::MyMatrixClientHandler(Solver<ISearchable<Matrix*>*, string>*, CacheManager<string, string>*):
         solver(solver), cm(cm){}
 
 void MyMatrixClientHandler::handleClient(int client_socketfd) { //todo go over this te see that it's correct and full
     vector<string> matrixLines = readFromBuffer(client_socketfd); //every node in the vector is a line of the matrix, except for the last two
     string problem;
     for (const auto &piece : matrixLines) problem += piece;
-    problem.erase(remove(problem.begin(), problem.end(), ' '), problem.end()); //remove spaces
-    string solution = cm->get("hello");
+    problem.erase(remove(problem.begin(), problem.end(), ' '), problem.end());
+    string solution = cm->get(problem);
 
     if (solution.empty()) {
         Matrix* matrix = createMatrix(matrixLines);
-//        solution = solver->solve(matrix); //todo change solver in this header, so that it receives generic type (or Matrix?)
-//        cm->insert(solution);
+        solution = solver->solve(matrix);
+        cm->insert(solution);
     }
     int is_sent = send(client_socketfd, solution.c_str(), solution.length(), 0);
     if (is_sent == -1) {
@@ -57,38 +57,55 @@ vector<string> MyMatrixClientHandler::readFromBuffer(int client_socketfd) {
     return line;
 }
 
+//create a vector of vectors of <State<Point*>>* of the vector of strings,
+//in which each string is a line in the matrix
 Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
     auto* matrix = new Matrix();
     int i=0, j=0, size = matrixLines.size();
     for (string str : matrixLines) {
-        i++;
         j=0;
+        string num;
+        //if it's initial state
         if (i+2 == size) {
-            break;
+            size_t comma = str.find(',');
+            int x = stoi(str.substr(0, comma));
+            int y = stoi(str.substr(comma+1));
+            auto p = new Point(x,y);
+            double cost = matrix->getMyMatrix()[x][y]->getCost();
+            auto state = new State<Point*>(p, cost);
+            matrix->setInitialState(state);
         }
-        vector<State<Point*>*> line;
-        matrix->getOuter().push_back(line);
-        char* temp = nullptr;
-        strcpy(temp, str.c_str());
-        char* token = strtok(temp, ",");
-        while (token != nullptr) {
-            j++;
-            auto p = new Point(i, j);
-            auto state = new State<Point*>(p, atof(token));
-            line.push_back(state);
-            //todo delete p and state, maybe here maybe someplace else
-            token = strtok(nullptr, ",");
-        }
-        /*for (char c : str) {
-            if (c == ',' || c == ' ') {
-                continue;
+        //if it's goal state
+        else if (i+1 == size) {
+            size_t comma = str.find(',');
+            int x = stoi(str.substr(0, comma));
+            int y = stoi(str.substr(comma+1));
+            auto p = new Point(x,y);
+            double cost = matrix->getMyMatrix()[x][y]->getCost();
+            auto state = new State<Point*>(p, cost);
+            matrix->setGoalState(state);
+        } else {
+            vector<State<Point *> *> line;
+            int len = str.length();
+            //split the string by commas
+            for (int c = 0; c < len; c++) {
+                if (str[c] == ',') {
+                    continue;
+                }
+                num += str[c];
+                if (str[c + 1] != ',' && c+1 != len) {
+                    continue;
+                }
+                auto p = new Point(i, j);
+                auto state = new State<Point *>(p, stoi(num));
+                line.push_back(state);
+                num = "";
+                j++;
+                //todo delete p and state, maybe here maybe someplace else
             }
-            j++;
-            auto p = new Point(i, j);
-            auto state = new State<Point*>(p, c-48);
-            line.push_back(state);
-            //todo delete p and state, maybe here maybe someplace else
-        }*/
+            matrix->getMyMatrix().push_back(line);
+        }
+        i++;
     }
     return matrix;
 }

@@ -19,7 +19,7 @@ public:
         }
         this->addOpenQueue(s->getInitialState());
         while (this->openQueueSize() > 0) {
-            State<T> *n = this->openQueue.pop();
+            State<T> *n = this->openQueue.top(); //todo changed from pop to top
             this->myStates.push_back(n);
             if (s->isGoalState(n)) {
                 // return best path

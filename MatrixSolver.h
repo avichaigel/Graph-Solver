@@ -9,12 +9,21 @@
 #include <string>
 #include "Solver.h"
 #include "Matrix.h"
+#include "Searcher.h"
 
 using namespace std;
 
-class MatrixSolver : public Solver<Matrix*, string>{
+//Object Adapter
+
+class MatrixSolver : public Solver<ISearchable<Matrix*>*, string>{
+private:
+    Searcher<Matrix*>* searcher{};
 public:
-    string solve(Matrix *problem) override;
+    explicit MatrixSolver(Searcher<Matrix*> *searcher) : searcher(searcher) {}
+
+    string solve(ISearchable<Matrix*> *problem) override {
+        searcher->search(problem);
+    }
 };
 
 

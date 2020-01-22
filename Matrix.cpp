@@ -23,10 +23,10 @@ string Matrix::to_string() {
     return std::__cxx11::string();
 }
 
-void Matrix::setInitialState(State<Point> *initial) {
+void Matrix::setInitialState(State<Point*> *initial) {
     Matrix::initialState = initial;
 }
 
-void Matrix::setGoalState(State<Point> *goal) {
+void Matrix::setGoalState(State<Point*> *goal) {
     Matrix::goalState = goal;
 }
