@@ -18,7 +18,7 @@ void start(int port, ClientHandler* c) {
         cerr << "Could not create a socket" << endl;
     }
     //bind socket to IP address
-    // we first need to create the sockaddr obj.x
+    // we first need to create the sockaddr obj.i
     sockaddr_in address; //in means IP4
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY; //give me any IP allocated for my machine
