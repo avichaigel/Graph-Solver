@@ -35,8 +35,8 @@ vector<State<Point>*> Matrix::getAllPossibleStates(State<Point> *s) {
     return allStates;
 }
 
-Point Matrix::getGoalState() {
-    return this->goalState->getState();
+State<Point>* Matrix::getGoalState() {
+    return this->goalState;
 }
 /*
 string Matrix::to_string() {
@@ -49,4 +49,9 @@ void Matrix::setInitialState(State<Point> *initial) {
 
 void Matrix::setGoalState(State<Point> *goal) {
     this->goalState = goal;
+}
+
+double Matrix::findDistance(State<Point> *s1, State<Point> *s2) {
+    return sqrt(pow(s1->getState().getI() - s2->getState().getI(), 2) +
+    pow(s1->getState().getJ() - s2->getState().getJ(), 2));
 }

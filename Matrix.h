@@ -9,6 +9,7 @@
 #include "Point.h"
 #include "ISearchable.h"
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -28,9 +29,8 @@ public:
     State<Point>*getInitialState() override;
     bool isGoalState(State<Point> *s) override;
     vector<State<Point> *> getAllPossibleStates(State<Point> *s) override;
-    Point getGoalState() override;
-    string to_string() override;
-
+    State<Point>* getGoalState() override;
+//    string to_string() override;
     double findDistance(State<Point> *s1, State<Point> *s2) override;
 };
 

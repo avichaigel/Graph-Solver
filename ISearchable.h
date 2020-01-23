@@ -16,8 +16,8 @@ public:
     virtual State<T>* getInitialState() = 0;
     virtual bool isGoalState(State<T>* s) = 0;
     virtual vector<State<T>*> getAllPossibleStates(State<T> *s) = 0;
-    virtual T getGoalState() = 0;
-    virtual string to_string() = 0;
+    virtual State<T>* getGoalState() = 0;
+//    virtual string to_string() = 0; //todo check if we need this, and if not - delete
     virtual double findDistance(State<T> *s1, State<T> *s2) = 0;
     virtual ~ISearchable()= default;
 };
