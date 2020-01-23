@@ -20,7 +20,7 @@ public:
             this->openQueue.pop();
         }
         this->addOpenQueue(s->getInitialState());
-        while (this->openQueueSize() > 0) {
+        while (!this->openQueue.empty()) {
             State<T> *n = this->openQueue.top();
             this->openQueue.pop();
             this->nodeEval++;
@@ -36,9 +36,9 @@ public:
             vector<State<T>*> states = s->getAllPossibleStates(n);
             for (State<T>* node : states) {
                 double newPathCost = n->getPathCost() + node->getCost();
-                if ((this->myStates.find(node) == this->myStates.end) && !(this->openQueueContains(node))) {
-//                vector<State<T>*>::iterator it = find_if(this->myStates.begin(), this->myStates.end(), node);
-//                if ((it == this->myStates.end()) && !(this->openQueueContains(node))) {
+//                if ((this->myStates.find(node) == this->myStates.end) && !(this->openQueueContains(node))) {
+                auto it = find(this->myStates.begin(), this->myStates.end(), node);
+                if ((it == this->myStates.end()) && !(this->openQueueContains(node))) {
                     //emplace of the neighbors not push
                     // https://stackoverflow.com/questions/35518611/difference-between-queues-emplace-and-push
                     node->setCameFrom(n);

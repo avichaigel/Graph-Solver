@@ -13,8 +13,7 @@ class State {
     double pathCost{};
 
 public:
-    State(T myState, double myCost) {
-        this->state = myState;
+    State(T myState, double myCost) : state(myState) {
         setCost(myCost);
         this->cameFrom = nullptr;
         setPathCost(0);

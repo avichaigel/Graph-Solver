@@ -5,28 +5,29 @@
 #include "Matrix.h"
 
 State<Point> *Matrix::getInitialState() {
-    return nullptr;
+    return this->initialState;
 }
 
 bool Matrix::isGoalState(State<Point> *s) {
-    return false;
+    return s->getState() == this->getGoalState();
 }
 
 vector<State<Point>*> Matrix::getAllPossibleStates(State<Point> *s) {
+    //todo implement - all of the matrix states as a vector
 }
 
 Point Matrix::getGoalState() {
-    return Point(0, 0);
+    return this->goalState->getState();
 }
 
 string Matrix::to_string() {
-    return std::__cxx11::string();
+    //todo implement
 }
 
-void Matrix::setInitialState(State<Point*> *initial) {
+void Matrix::setInitialState(State<Point> *initial) {
     this->initialState = initial;
 }
 
-void Matrix::setGoalState(State<Point*> *goal) {
+void Matrix::setGoalState(State<Point> *goal) {
     this->goalState = goal;
 }

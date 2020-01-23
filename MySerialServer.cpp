@@ -22,7 +22,7 @@ void start(int port, ClientHandler* c) {
     sockaddr_in address; //in means IP4
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY; //give me any IP allocated for my machine
-    address.sin_port = htons(5600); //we need to convert our number to a number that the network understands
+    address.sin_port = htons(port); //we need to convert our number to a number that the network understands
     //todo change the port to be a variable that receives the port from the python script
 
     //the actual bind command

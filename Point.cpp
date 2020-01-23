@@ -12,4 +12,7 @@ int Point::getY() const {
     return y;
 }
 
-Point::Point(int x, int y) : x(x), y(y) {}
+Point::Point(int x1, int y1) {
+    this->x = x1;
+    this->y = y1;
+}

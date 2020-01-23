@@ -24,7 +24,7 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) { //todo go over t
     problem.erase(remove(problem.begin(), problem.end(), ' '), problem.end());
     string solution = getCm()->get(problem);
 
-    if (solution.empty()) {
+    if (solution == "-1") {
         Matrix* matrix = createMatrix(matrixLines);
         solution = getSolver()->solve(matrix);
         getCm()->insert(solution);
@@ -59,7 +59,7 @@ vector<string> MyMatrixClientHandler::readFromBuffer(int client_socketfd) {
     return line;
 }
 
-//create a vector of vectors of <State<Point*>>* of the vector of strings,
+//create a vector of vectors of <State<Point>>* of the vector of strings,
 //in which each string is a line in the matrix
 Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
     Matrix* matrix = new Matrix();
@@ -72,9 +72,9 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
             size_t comma = str.find(',');
             int x = stoi(str.substr(0, comma));
             int y = stoi(str.substr(comma+1));
-            auto p = new Point(x,y);
+            auto p = Point(x,y);
             double cost = matrix->getMyMatrix()[x][y]->getCost();
-            auto state = new State<Point*>(p, cost);
+            auto state = new State<Point>(p, cost);
             matrix->setInitialState(state);
         }
         //if it's goal state
@@ -82,12 +82,12 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
             size_t comma = str.find(',');
             int x = stoi(str.substr(0, comma));
             int y = stoi(str.substr(comma+1));
-            auto p = new Point(x,y);
+            auto p = Point(x,y);
             double cost = matrix->getMyMatrix()[x][y]->getCost();
-            auto state = new State<Point*>(p, cost);
+            auto state = new State<Point>(p, cost);
             matrix->setGoalState(state);
         } else {
-            vector<State<Point *> *> line;
+            vector<State<Point> *> line;
             int len = str.length();
             //split the string by commas
             for (int c = 0; c < len; c++) {
@@ -98,8 +98,8 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
                 if (str[c + 1] != ',' && c+1 != len) {
                     continue;
                 }
-                auto p = new Point(i, j);
-                auto state = new State<Point *>(p, stoi(num));
+                auto p = Point(i, j);
+                auto state = new State<Point>(p, stoi(num));
                 line.push_back(state);
                 num = "";
                 j++;

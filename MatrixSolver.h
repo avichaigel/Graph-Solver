@@ -5,7 +5,6 @@
 #ifndef EX4_MATRIXSOLVER_H
 #define EX4_MATRIXSOLVER_H
 
-
 #include <string>
 #include "Solver.h"
 #include "Matrix.h"
@@ -20,9 +19,9 @@ private:
     Searcher<Point>* searcher;
 public:
     explicit MatrixSolver(Searcher<Point> *searcher) : searcher(searcher) {}
-
     string solve(ISearchable<Point> *problem) override {
-        searcher->search(problem);
+        vector<State<Point>*> solution = searcher->search(problem);
+
     }
 };
 
