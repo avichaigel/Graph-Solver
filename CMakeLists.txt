@@ -8,4 +8,4 @@ add_executable(ex4 main.cpp CacheManager.cpp CacheManager.h ClientHandler.h File
         MySerialServer.cpp MySerialServer.h Server.h Solver.cpp Solver.h StringReverser.cpp StringReverser.h Boot.h
         MyTestClientHandler.h MyTestClientHandler.cpp State.h ISearchable.h Searcher.h BestFS.h SearchByPQ.h
         CostsCompare.h MyMatrixClientHandler.cpp MyMatrixClientHandler.h Matrix.h Matrix.cpp MatrixSolver.h
-        Point.cpp Point.h BFS.h DFS.h Astar.h)
+        Point.cpp Point.h BFS.h DFS.h Astar.h MatrixSolver.cpp)

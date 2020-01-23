@@ -103,7 +103,6 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
                 line.push_back(state);
                 num = "";
                 j++;
-                //todo delete p and state, maybe here maybe someplace else
             }
             matrix->getMyMatrix().push_back(line);
         }

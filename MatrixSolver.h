@@ -19,13 +19,7 @@ private:
     Searcher<Point>* searcher;
 public:
     explicit MatrixSolver(Searcher<Point> *searcher) : searcher(searcher) {}
-    string solve(ISearchable<Point> *problem) override {
-        vector<State<Point>*> solution = searcher->search(problem);
-        for (auto s: solution) {
-            auto point = s->getState();
-//            if (point.getI())
-        }
-    }
+    string solve(ISearchable<Point> *problem) override;
 };
 
 
