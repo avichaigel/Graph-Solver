@@ -6,9 +6,9 @@
 
 string MatrixSolver::solve(ISearchable<Point> *problem) {
     vector<State<Point>*> solution = searcher->search(problem);
-    string path;
+    string path, direction;
     vector<string> reversedVec;
-    for (int s=0; s < solution.size(); s++) {
+    for (int s=0; s < solution.size()-1; s++) {
         auto current = solution[s];
         auto father = solution[s+1];
         auto currI = current->getState().getI();
@@ -16,20 +16,21 @@ string MatrixSolver::solve(ISearchable<Point> *problem) {
         auto fathI = father->getState().getI();
         auto fathJ = father->getState().getJ();
         if (currI > fathI) {
-            reversedVec.emplace_back("down, ");
+            direction = "down (" + to_string((int)current->getPathCost()) + "),";
         } else if (currI == fathI) {
             if (currJ > fathJ) {
-                reversedVec.emplace_back("right, ");
+                direction = "right (" + to_string((int)current->getPathCost()) + "),";
             } else if (currJ < fathJ) {
-                reversedVec.emplace_back("left, ");
+                direction = "left (" + to_string((int)current->getPathCost()) + "),";
             }
-        } else {
-            reversedVec.emplace_back("up, ");
+        } else if (currI < fathI){
+            direction = "up (" + to_string((int)current->getPathCost()) + "),";
         }
+        reversedVec.emplace_back(direction);
     }
     for (auto i = reversedVec.rbegin(); i != reversedVec.rend(); ++i ) {
         path += *i;
     }
-    path = path.substr(0, path.size()-2);
+    path = path.substr(0, path.size()-1);
     return path;
 }

@@ -57,10 +57,9 @@ string FileCacheManager::get(string problem) {
     }
     if (this->prob2str.find(problem) != this->prob2str.cend()) {
         string filename = this->prob2str.at(problem);
-        filename.append(".txt");
         ifstream myFile(filename);
         if (!myFile) {
-            cerr << "Error occurred while opening the file";
+            cerr << "Error occurred while opening the file\n";
         }
         string sol;
         if (getline(myFile, sol)) {
@@ -138,9 +137,7 @@ void FileCacheManager::pairSplit(string pair) {
         pair.erase(0, pos + delim.length());
         v = pair.substr(0, pos);
         this->prob2str.insert({k, v});
-        this->count++;
     }
-    this->count--;
 }
 
 void FileCacheManager::startMap() {

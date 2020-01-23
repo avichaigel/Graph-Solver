@@ -17,18 +17,24 @@ MyMatrixClientHandler::MyMatrixClientHandler(MatrixSolver* solver1, CacheManager
     this->solver = solver1;
 }
 
-void MyMatrixClientHandler::handleClient(int client_socketfd) { //todo go over this te see that it's correct and full
+void MyMatrixClientHandler::handleClient(int client_socketfd) {
     vector<string> matrixLines = readFromBuffer(client_socketfd); //every node in the vector is a line of the matrix, except for the last two
     string problem;
     for (const auto &piece : matrixLines) problem += piece;
     problem.erase(remove(problem.begin(), problem.end(), ' '), problem.end());
+    mutex_lock.lock();
     string solution = getCm()->get(problem);
+    mutex_lock.unlock();
 
     if (solution == "-1") {
         Matrix* matrix = createMatrix(matrixLines);
         solution = this->solver->solve(matrix);
+        mutex_lock.lock();
         getCm()->insert(solution);
+        mutex_lock.unlock();
     }
+
+    //todo maybe check if solution is longer than 1024 and then send by parts
     int is_sent = send(client_socketfd, solution.c_str(), solution.length(), 0);
     if (is_sent == -1) {
         cout << "Error while sending data to client" << endl;

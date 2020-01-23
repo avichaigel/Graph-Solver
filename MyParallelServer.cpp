@@ -2,15 +2,17 @@
 // Created by avichai on 14/01/2020.
 //
 
+#include <thread>
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include "MySerialServer.h"
+#include "MyParallelServer.h"
 
 #define TIMEOUT 120
 
-void start(int port, ClientHandler* c) {
+void MyParallelServer::start(int port, ClientHandler* c) {
+
     //create socket
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
@@ -30,7 +32,7 @@ void start(int port, ClientHandler* c) {
     }
 
     //making socket listen to the port
-    if (listen(socketfd, 5) == -1) { //can also set to SOMAXCON (max connections)
+    if (listen(socketfd, 10) == -1) { //can also set to SOMAXCON (max connections)
         cerr << "Error during listening command" << endl;
     } else {
         cout << "Server is now listening ..." << endl;
@@ -44,27 +46,36 @@ void start(int port, ClientHandler* c) {
 
     bool isConnected = true;
     while (isConnected) { //todo check how to stop it
-        // accepting a client
-        int addrlen = sizeof(address);
-        int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
+        if (this->socketCounter < 10) {
+            // accepting a client
+            int addrlen = sizeof(address);
+            int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
 
-        if (client_socket == -1) {
-            cerr << "Error accepting client" << endl;
-            continue;
-        } else {
-            cout << "Connected" << endl;
+            if (client_socket == -1) {
+                cerr << "Error accepting new client, trying again" << endl;
+                continue;
+            } else {
+                cout << "Connected to a new client" << endl;
+            }
+            thread thread(&MyParallelServer::callThread, this, client_socket, c);
+            thread.detach();
         }
-        c->handleClient(client_socket);
-        close(client_socket); //closing the client socket
     }
-    close(socketfd);
+    ::close(socketfd);
 }
 
-void MySerialServer::open(int port, ClientHandler* c) {
+void MyParallelServer::open(int port, ClientHandler* c) {
     //call the thread that listens to the simulator and updates values
     start(port, c);
 }
 
-void MySerialServer::close() {
+void MyParallelServer::close() {
     //todo implement this: change the flag in the while to false, and close the socket
+}
+
+void MyParallelServer::callThread(int client_socketfd, ClientHandler* c) {
+    this->socketCounter++;
+    c->handleClient(client_socketfd);
+    ::close(client_socketfd); //closing the client socket //todo check what's the deal with the "::" and if it works or not
+    this->socketCounter--;
 }
