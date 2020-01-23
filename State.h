@@ -46,6 +46,7 @@ public:
     bool equals(State<T> *s) {
         return this->state == s->getState();
     }
+
     ~State()= default;
 };
 

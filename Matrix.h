@@ -29,7 +29,9 @@ public:
     bool isGoalState(State<Point> *s) override;
     vector<State<Point> *> getAllPossibleStates(State<Point> *s) override;
     Point getGoalState() override;
-//    string to_string() override;
+    string to_string() override;
+
+    double findDistance(State<Point> *s1, State<Point> *s2) override;
 };
 
 
