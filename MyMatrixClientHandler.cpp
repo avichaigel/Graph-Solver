@@ -19,6 +19,7 @@ MyMatrixClientHandler::MyMatrixClientHandler(MatrixSolver* solver1, CacheManager
 
 void MyMatrixClientHandler::handleClient(int client_socketfd) {
     vector<string> matrixLines = readFromBuffer(client_socketfd); //every node in the vector is a line of the matrix, except for the last two
+    //create a string out of all of the matrix's entries, and check if we have a solution for it in cache
     string problem;
     for (const auto &piece : matrixLines) problem += piece;
     problem.erase(remove(problem.begin(), problem.end(), ' '), problem.end());
@@ -26,6 +27,7 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) {
     string solution = getCm()->get(problem);
     mutex_lock.unlock();
 
+    //if we don't have a solution, solve it and insert it to cache
     if (solution == "-1") {
         Matrix* matrix = createMatrix(matrixLines);
         solution = this->solver->solve(matrix);

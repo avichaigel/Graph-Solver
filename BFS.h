@@ -41,7 +41,7 @@ public:
         this->nodesVisited.push_back(currNode);
         Q.push(currNode);
         while (!Q.empty()) {
-            currNode = Q.front;
+            currNode = Q.front();
             Q.pop();
             this->nodeVisitedNum += 1;
             if (!currNode->equals(goalNode)) {
@@ -56,7 +56,7 @@ public:
                 this->pathCost += currNode->getCost();
                 this->myPath.insert(this->myPath.begin(), currNode);
                 while (!currNode->equals(firstNode)) {
-                    currNode = currNode->getCameFrom();
+                    currNode = currNode->getFather();
                     this->pathCost += currNode->getCost();
                     this->myPath.insert(this->myPath.begin(), currNode);
                 }
