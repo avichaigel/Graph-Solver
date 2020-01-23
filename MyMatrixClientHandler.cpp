@@ -26,7 +26,7 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) { //todo go over t
 
     if (solution == "-1") {
         Matrix* matrix = createMatrix(matrixLines);
-        solution = getSolver()->solve(matrix);
+        solution = this->solver->solve(matrix);
         getCm()->insert(solution);
     }
     int is_sent = send(client_socketfd, solution.c_str(), solution.length(), 0);
