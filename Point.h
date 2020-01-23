@@ -11,14 +11,14 @@ using namespace std;
 
 class Point{
 private:
-    int x, y;
+    int i, j;
 public:
-    int getX() const;
-    int getY() const;
-    Point(int x, int y);
+    int getI() const;
+    int getJ() const;
+    Point(int i1, int j1);
 
     bool operator == (Point p2) {
-        return this->getX() == p2.getX() && this->getY() == p2.getY();
+        return this->getI() == p2.getI() && this->getJ() == p2.getJ();
     }
 };
 

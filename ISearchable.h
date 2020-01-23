@@ -17,7 +17,7 @@ public:
     virtual bool isGoalState(State<T>* s) = 0;
     virtual vector<State<T>*> getAllPossibleStates(State<T> *s) = 0;
     virtual T getGoalState() = 0;
-    virtual string to_string() = 0;
+//    virtual string to_string() = 0; //todo check if we have a need of this method, and if not - delete it
     virtual ~ISearchable()= default;
 };
 
