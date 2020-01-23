@@ -8,15 +8,15 @@
 template <typename T>
 class State {
     T state;
-    double cost{};
+    double cost;
     State<T> *cameFrom;
-    double pathCost{};
+    double pathCost;
+    double hueristicDist;
+
 
 public:
-    State(T myState, double myCost) : state(myState) {
-        setCost(myCost);
+    State(T myState, double myCost) : state(myState), pathCost(0), cost(0), hueristicDist(0) {
         this->cameFrom = nullptr;
-        setPathCost(0);
     }
 
     double getPathCost() {
@@ -45,6 +45,12 @@ public:
     }
     bool equals(State<T> *s) {
         return this->state == s->getState();
+    }
+    void setMyHueristicDist(double dist) {
+        this->hueristicDist = dist;
+    }
+    double getMyHueristicDist() {
+        return  this->hueristicDist;
     }
 
     ~State()= default;
