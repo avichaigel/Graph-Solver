@@ -40,6 +40,10 @@ public:
             vector<State<T>*> states = s->getAllPossibleStates(n);
             for (State<T>* node : states) {
                 double newPathCost = n->getPathCost() + node->getCost();
+                // heuristic dist from the current node to our goal.
+                double heuristicDist = s->findDistance(node, s->getGoalState());
+                // the combined cost that matters to Astar algorithm
+                double aStarCost = heuristicDist + newPathCost;
                 if ((this->myStates.find(node) == this->myStates.end) && !(this->pQContains(node))) {
                     node->setCameFrom(n);
                     if (node->getFather() != nullptr) {
