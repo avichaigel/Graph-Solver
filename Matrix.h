@@ -26,7 +26,7 @@ public:
     }
     void setInitialState(State<Point> *initial);
     void setGoalState(State<Point> *goal);
-    State<Point>*getInitialState() override;
+    State<Point>* getInitialState() override;
     bool isGoalState(State<Point> *s) override;
     vector<State<Point> *> getAllPossibleStates(State<Point> *s) override;
     State<Point>* getGoalState() override;

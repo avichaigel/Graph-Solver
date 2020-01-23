@@ -9,7 +9,7 @@ State<Point> *Matrix::getInitialState() {
 }
 
 bool Matrix::isGoalState(State<Point> *s) {
-    return s->getState() == this->getGoalState();
+    return s->getState() == this->getGoalState()->getState();
 }
 
 vector<State<Point>*> Matrix::getAllPossibleStates(State<Point> *s) {

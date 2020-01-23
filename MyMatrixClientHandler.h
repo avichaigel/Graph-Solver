@@ -20,10 +20,7 @@ private:
     CacheManager<string, string>* cm;
 public:
     MatrixSolver* getSolver() const;
-
     CacheManager<string, string> *getCm() const;
-
-public:
     MyMatrixClientHandler(MatrixSolver* solver1, CacheManager<string, string>* cm1);
     void handleClient(int client_socketfd) override;
     static vector<string> readFromBuffer(int client_socketfd);

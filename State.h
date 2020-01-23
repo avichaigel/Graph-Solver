@@ -15,7 +15,7 @@ class State {
 
 
 public:
-    State(T myState, double myCost) : state(myState), pathCost(0), cost(0), hueristicDist(0) {
+    State(T myState, double myCost) : state(myState), pathCost(0), cost(myCost), hueristicDist(0) {
         this->cameFrom = nullptr;
     }
 
