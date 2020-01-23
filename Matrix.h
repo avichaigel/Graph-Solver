@@ -16,15 +16,15 @@ class Matrix : public ISearchable<Point> {
 public:
 
 private:
-    vector<vector<State<Point*>*>> myMatrix;
-    State<Point*>* initialState;
-    State<Point*>* goalState;
+    vector<vector<State<Point>*>> myMatrix;
+    State<Point>* initialState;
+    State<Point>* goalState;
 public:
-    vector<vector<State<Point*>*>> &getMyMatrix() {
+    vector<vector<State<Point>*>> &getMyMatrix() {
         return myMatrix;
     }
-    void setInitialState(State<Point*> *initial);
-    void setGoalState(State<Point*> *goal);
+    void setInitialState(State<Point> *initial);
+    void setGoalState(State<Point> *goal);
     State<Point>*getInitialState() override;
     bool isGoalState(State<Point> *s) override;
     vector<State<Point> *> getAllPossibleStates(State<Point> *s) override;

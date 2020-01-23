@@ -54,11 +54,6 @@ string FileCacheManager::get(string problem) {
      * then i add...*/
     if (this->prob2str.empty()) {
         startMap();
-        if (problem == "start") {
-            // when we run the program and we have already solved some problems in old runs
-            return "done";
-        }
-
     }
     if (this->prob2str.find(problem) != this->prob2str.cend()) {
         string filename = this->prob2str.at(problem);
@@ -78,7 +73,7 @@ string FileCacheManager::get(string problem) {
         this->prob2str.insert({problem, name});
         setCurrVal(name);
         mapSaver(problem);
-        return "";
+        return "-1";
     }
 
     /*auto it = sol2str.find(key);

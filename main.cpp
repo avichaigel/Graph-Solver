@@ -5,9 +5,11 @@
 
 
 int main(int argc, char* argv[]) {
-//    auto myCache = new FileCacheManager();
-//    auto start = myCache->get("start");
     boot::Main main1;
-    main1.main(5600);
+    if (argc == 2) {
+        main1.main(stoi(argv[1]));
+    } else {
+        main1.main(5600);
+    }
     return 0;
 }

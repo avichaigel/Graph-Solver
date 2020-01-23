@@ -17,18 +17,12 @@ namespace boot {
     class Main {
     public:
         void main(int port) {
-            Searcher<Point>* searcher = new BestFS<Point>();
+            Searcher<Point>* searcher = new BestFS<Point>(); //todo change to be all of the options
             MatrixSolver* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
             server_side::Server* server = new MySerialServer();
-            ///test
-            string solution = cm->get("hello");
-            if (solution.empty())
-                cout << solution << endl;
-            ///end test //todo erase test
             server->open(port, handler);
-
         }
     };
 }
