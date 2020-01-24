@@ -14,13 +14,12 @@ class SearchByPQ: public Searcher<T> {
 protected:
     // node evaluation
     int nodeEval;
+    double pathCost;
     vector<State<T>*> myStates;
     priority_queue<State<T>*, vector<State<T>*>, CostsCompare<T>> openQueue;
 
 public:
-    SearchByPQ() {
-        this->setNodeEval(0);
-    }
+    SearchByPQ(): nodeEval(0), pathCost(0) {}
 
     void setNodeEval(int eval) {
         this->nodeEval = eval;
@@ -47,6 +46,7 @@ public:
                 flag = 1;
             }
         }
+//        this->openQueue = tmpQ;
         while (!tmpQ.empty()) {
             tmpS = tmpQ.top();
             tmpQ.pop();
@@ -74,11 +74,33 @@ public:
         while(!(currState->equals(startState))){
             path.push_back(currState);
             currState = currState->getFather();
+            this->pathCost += currState->getCost();
         }
         path.push_back(currState);
         return path;
     }
 
+    void setPathCost(double pc) {
+        this->pathCost = pc;
+    }
+
+    /*bool isInClosed(State<T>* s) {
+        vector<State<T>*> v;
+        while(!this->myStates.empty()) {
+            State<T>* tmp = this->myStates.front();
+            this->myStates.pop_back();
+            v.push_back(tmp);
+            if (tmp->getState() == s->getState()) {
+                return true;
+            }
+        }
+        this->myStates = v;
+        return false;
+        *//*if (this->myStates.find(s) != this->myStates.cend) {
+            return true;
+        }
+        return false;*//*
+    }*/
 };
 
 #endif //EX4_SEARCHBYPQ_H

@@ -1,3 +1,4 @@
+
 //
 // Created by ofirn93 on 19/01/2020.
 //
@@ -14,51 +15,68 @@ class BestFS: public SearchByPQ<T> {
 public:
 
     vector<State<T>*> search(ISearchable<T> *s) override {
-        this->myStates.clear();
-        this->setNodeEval(0);
-        while (!this->openQueue.empty()) {
-            this->openQueue.pop();
-        }
         this->addOpenQueue(s->getInitialState());
         while (!this->openQueue.empty()) {
             State<T> *n = this->openQueue.top();
             this->openQueue.pop();
             this->nodeEval++;
             this->myStates.push_back(n);
-//            this->myStates.insert(this->myStates.begin(), n);
-//            https://stackoverflow.com/questions/13324431/c-vectors-insert-push-back-difference
-
             // if you reached your goal
             if (s->isGoalState(n)) {
+                n->setPathCost(n->getFather()->getPathCost() + n->getCost());
                 // return best path
                 return this->bestPath(n,s);
             }
             vector<State<T>*> states = s->getAllPossibleStates(n);
             for (State<T>* node : states) {
                 double newPathCost = n->getPathCost() + node->getCost();
-//                if ((this->myStates.find(node) == this->myStates.end) && !(this->openQueueContains(node))) {
-                auto it = find(this->myStates.begin(), this->myStates.end(), node);
-                if ((it == this->myStates.end()) && !(this->openQueueContains(node))) {
-                    //emplace of the neighbors not push
-                    // https://stackoverflow.com/questions/35518611/difference-between-queues-emplace-and-push
+                if (!(this->isInClosed(node, this->myStates)) && !(this->openQueueContains(node))) {
                     node->setCameFrom(n);
+//                    node->setPathCost(node->getCost() + node->getFather()->getPathCost());
                     if (node->getFather() != nullptr) {
                         node->setPathCost(node->getCost() + node->getFather()->getPathCost());
                     }
-                    this->openQueue.emplace(node);
+                    this->openQueue.push(node);
                 } else {
                     if (newPathCost < node->getPathCost()) {
                         node->setCameFrom(n);
                         node->setPathCost(newPathCost);
-                        this->openQueue.emplace(node);
-                        /*if (this->openQueue.openQueueContains(node)) {
-                            this->openQueue.emplace(node);
+                        //if !inOpenList - add
+                        if (!this->openQueueContains(node)) {
+                            this->openQueue.push(node);
                         } else {
-                            this->openQueue.emplace(node);
-                        }*/
+                            this->reloadQ(node);
+                        }
                     }
                 }
             }
+        }
+    }
+    bool isInClosed(State<T>* s, vector<State<T>*> v) {
+        int i;
+        for (i = 0; i < v.size(); i++) {
+            State<T>* tmp = v[i];
+            if (tmp->getState() == s->getState()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void reloadQ(State<T>* s) {
+        State<T>* tmpS;
+        // temporary queue
+        priority_queue<State<T>*, vector<State<T>*>, CostsCompare<T>>  tmpQ;
+        tmpQ.push(s);
+        while (!this->openQueue.empty()) {
+            tmpS = this->openQueue.top();
+            this->openQueue.pop();
+            tmpQ.push(tmpS);
+        }
+        while (!tmpQ.empty()) {
+            tmpS = tmpQ.top();
+            tmpQ.pop();
+            this->openQueue.push(tmpS);
         }
     }
 };

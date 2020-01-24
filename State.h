@@ -15,7 +15,7 @@ class State {
 
 
 public:
-    State(T myState, double myCost) : state(myState), pathCost(0), cost(myCost), hueristicDist(0) {
+    State(T myState, double myCost) : state(myState), pathCost(myCost), cost(myCost), hueristicDist(0) {
         this->cameFrom = nullptr;
     }
 
@@ -26,6 +26,7 @@ public:
     void setCost(double myCost) {
         this->cost = myCost;
     }
+
     void setCameFrom(State<T> *cf) {
         this->cameFrom = cf;
     }
@@ -52,6 +53,10 @@ public:
     double getMyHueristicDist() {
         return  this->hueristicDist;
     }
+
+//    bool operator==(const State &rhs) const {
+//        return state == rhs.state;
+//    }
 
     ~State()= default;
 };

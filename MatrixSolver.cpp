@@ -8,7 +8,7 @@ string MatrixSolver::solve(ISearchable<Point> *problem) {
     vector<State<Point>*> solution = searcher->search(problem);
     string path;
     vector<string> reversedVec;
-    for (int s=0; s < solution.size(); s++) {
+    for (int s=0; s < solution.size()-1; s++) {
         auto current = solution[s];
         auto father = solution[s+1];
         auto currI = current->getState().getI();

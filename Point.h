@@ -16,7 +16,9 @@ public:
     int getI() const;
     int getJ() const;
     Point(int i1, int j1);
-
+    bool operator == (Point &p2) {
+        return this->getI() == p2.getI() && this->getJ() == p2.getJ();
+    }
     bool operator == (Point p2) {
         return this->getI() == p2.getI() && this->getJ() == p2.getJ();
     }

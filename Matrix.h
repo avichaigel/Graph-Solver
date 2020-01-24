@@ -20,6 +20,7 @@ private:
     vector<vector<State<Point>*>> myMatrix;
     State<Point>* initialState;
     State<Point>* goalState;
+
 public:
     vector<vector<State<Point>*>> &getMyMatrix() {
         return myMatrix;
