@@ -58,4 +58,7 @@ void Matrix::setGoalState(State<Point> *goal) {
 double Matrix::findDistance(State<Point> *s1, State<Point> *s2) {
     return sqrt(pow(s1->getState().getI() - s2->getState().getI(), 2) +
     pow(s1->getState().getJ() - s2->getState().getJ(), 2));
+    /*double xDistance = abs(s1->getState().getI() - s2->getState().getI());
+    double yDistance = abs(s1->getState().getJ() - s2->getState().getJ());
+    return  sqrt(pow((xDistance), 2) + pow(yDistance, 2));*/
 }

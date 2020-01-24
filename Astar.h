@@ -13,14 +13,60 @@ class AStar : public SearchByPQ<T> {
     class CostsCompareAstar {
     public:
         bool operator()(State<T> *s1, State<T> *s2) {
-            return ((s1->getHeuristicDistance() + s1->getPathCost()) <
-                    (s2->getHeuristicDistance() + s2->getPathCost()));
+            return ((s1->getMyHueristicDist() + s1->getPathCost()) >
+                    (s2->getMyHueristicDist() + s2->getPathCost()));
         }
     };
     priority_queue<State<T>*, vector<State<T>*>, CostsCompareAstar> pQ;
 
 public:
     vector<State<T>*> search(ISearchable<T> *s) override {
+        this->pQ.push((s->getInitialState()));
+        State<T> *n = this->pQ.top();
+        n->setMyHueristicDist(s->findDistance(n, s->getGoalState()));
+        while (!this->pQ.empty()) {
+            n = this->pQ.top();
+            this->pQ.pop();
+            this->nodeEval++;
+            this->myStates.push_back(n);
+            // if you reached your goal
+            if (s->isGoalState(n)) {
+                n->setPathCost(n->getFather()->getPathCost() + n->getCost());
+                // return best path
+                return this->bestPath(n,s);
+            }
+//            n->setMyHueristicDist(s->findDistance(n, s->getGoalState()));
+            vector<State<T>*> states = s->getAllPossibleStates(n);
+            for (State<T>* node : states) {
+                double newPathCost = n->getPathCost() + node->getCost();
+                double heuristicDist = s->findDistance(node, s->getGoalState());
+                double aStarCost = heuristicDist + newPathCost;
+                if (!(this->isInClosed(node, this->myStates)) && !(this->pQContains(node))) {
+                    node->setCameFrom(n);
+//                    node->setPathCost(node->getCost() + node->getFather()->getPathCost());
+                    if (node->getFather() != nullptr) {
+                        node->setPathCost(node->getCost() + node->getFather()->getPathCost());
+                    }
+                    node->setMyHueristicDist(heuristicDist);
+                    this->pQ.push(node);
+                } else {
+                    if (aStarCost < node->getPathCost() + node->getMyHueristicDist()) {
+                        node->setCameFrom(n);
+                        node->setPathCost(newPathCost);
+                        node->setMyHueristicDist(heuristicDist);
+                        //if !inOpenList - add
+                        if (!this->pQContains(node)) {
+                            this->pQ.push(node);
+                        } else {
+                            this->pQContains(node);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*vector<State<T>*> search(ISearchable<T> *s) override {
         this->myStates.clear();
         this->setNodeEval(0);
         while (!this->pQ.empty()) {
@@ -59,7 +105,7 @@ public:
                 }
             }
         }
-    }
+    }*/
 
     bool pQContains(State<T> *s) {
         int flag = 0;
@@ -80,6 +126,34 @@ public:
             this->pQ.push(tmpS);
         }
         return flag != 0;
+    }
+
+    bool isInClosed(State<T>* s, vector<State<T>*> v) {
+        int i;
+        for (i = 0; i < v.size(); i++) {
+            State<T>* tmp = v[i];
+            if (tmp->getState() == s->getState()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void reloadQ(State<T>* s) {
+        State<T>* tmpS;
+        // temporary queue
+        priority_queue<State<T> *, vector<State<T> *>, CostsCompareAstar> tmpQ;
+        tmpQ.push(s);
+        while (!this->openQueue.empty()) {
+            tmpS = this->openQueue.top();
+            this->openQueue.pop();
+            tmpQ.push(tmpS);
+        }
+        while (!tmpQ.empty()) {
+            tmpS = tmpQ.top();
+            tmpQ.pop();
+            this->openQueue.push(tmpS);
+        }
     }
 
 };

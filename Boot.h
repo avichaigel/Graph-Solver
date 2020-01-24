@@ -15,12 +15,14 @@
 #include "MyParallelServer.h"
 #include "BFS.h"
 #include "DFS.h"
+#include "Astar.h"
 
 namespace boot {
     class Main {
     public:
         void main(int port) {
-            Searcher<Point>* searcher = new BestFS<Point>(); //todo change to be all of the options
+//            Searcher<Point>* searcher = new BestFS<Point>(); //todo change to be all of the options
+            Searcher<Point>* searcher = new AStar<Point>();
             MatrixSolver* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
