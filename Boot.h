@@ -12,6 +12,9 @@
 #include "MyMatrixClientHandler.h"
 #include "MatrixSolver.h"
 #include "BestFS.h"
+#include "MyParallelServer.h"
+#include "BFS.h"
+#include "DFS.h"
 
 namespace boot {
     class Main {
@@ -21,7 +24,7 @@ namespace boot {
             MatrixSolver* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
-            server_side::Server* server = new MySerialServer();
+            server_side::Server* server = new MySerialServer(); //todo change to parallel
             server->open(port, handler);
         }
     };

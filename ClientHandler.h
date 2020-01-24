@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <mutex>
 
 using namespace std;
 
@@ -11,6 +12,8 @@ using namespace std;
 
 
 class ClientHandler {
+protected:
+    mutex mutex_lock;
 public:
     virtual void handleClient(int client_socketfd) = 0;
 };
