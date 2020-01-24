@@ -20,11 +20,11 @@ namespace boot {
     class Main {
     public:
         void main(int port) {
-            Searcher<Point>* searcher = new BFS<Point>(); //todo change to be all of the options
+            Searcher<Point>* searcher = new BestFS<Point>(); //todo change to be all of the options
             MatrixSolver* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
-            server_side::Server* server = new MySerialServer();
+            server_side::Server* server = new MySerialServer(); //todo change to parallel
             server->open(port, handler);
         }
     };

@@ -52,8 +52,8 @@ void MyParallelServer::start(int port, ClientHandler* c) {
             int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
 
             if (client_socket == -1) {
-                cerr << "Error accepting new client, trying again" << endl;
-                continue;
+                cerr << "Error accepting new client, time is out" << endl;
+                break;
             } else {
                 cout << "Connected to a new client" << endl;
             }
@@ -75,7 +75,9 @@ void MyParallelServer::close() {
 
 void MyParallelServer::callThread(int client_socketfd, ClientHandler* c) {
     this->socketCounter++;
+    cout << "thread " << socketCounter << " opened" << endl;
     c->handleClient(client_socketfd);
     ::close(client_socketfd); //closing the client socket //todo check what's the deal with the "::" and if it works or not
     this->socketCounter--;
+    cout << "thread " << socketCounter << " closed" << endl;
 }

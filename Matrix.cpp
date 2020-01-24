@@ -22,6 +22,9 @@ vector<State<Point>*> Matrix::getAllPossibleStates(State<Point> *s) {
         i++;
         if (i == si - 1 || i == si || i == si + 1) {
             for (auto state : line) {
+                if (state->getCost() == -1) {
+                    continue;
+                }
                 if ((i == si - 1 || i == si + 1) && (j == sj)) { //if it's on another line but the same column
                     allStates.push_back(state);
                 } else if(i == si && (j == sj -1 || j == sj +1 )) {//if it's on the same line and is a neighbor

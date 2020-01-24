@@ -8,8 +8,6 @@
 #include <unistd.h>
 #include "MySerialServer.h"
 
-#define TIMEOUT 120
-
 void start(int port, ClientHandler* c) {
     //create socket
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -37,7 +35,7 @@ void start(int port, ClientHandler* c) {
     }
 
     struct timeval tv;
-    int timeout_in_seconds = TIMEOUT;
+    int timeout_in_seconds = 120;
     tv.tv_sec = timeout_in_seconds;
     tv.tv_usec = 0;
     setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
@@ -49,8 +47,8 @@ void start(int port, ClientHandler* c) {
         int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
 
         if (client_socket == -1) {
-            cerr << "Error accepting client" << endl;
-            continue;
+            cerr << "Error accepting client, time is out" << endl;
+            break;
         } else {
             cout << "Connected" << endl;
         }
