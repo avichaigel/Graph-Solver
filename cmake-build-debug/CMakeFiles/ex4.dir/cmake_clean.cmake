@@ -1,8 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ex4.dir/CacheManager.cpp.o"
   "CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
+  "CMakeFiles/ex4.dir/Matrix.cpp.o"
+  "CMakeFiles/ex4.dir/MatrixSolver.cpp.o"
+  "CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o"
+  "CMakeFiles/ex4.dir/MyParallelServer.cpp.o"
   "CMakeFiles/ex4.dir/MySerialServer.cpp.o"
   "CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
+  "CMakeFiles/ex4.dir/Point.cpp.o"
   "CMakeFiles/ex4.dir/Solver.cpp.o"
   "CMakeFiles/ex4.dir/StringReverser.cpp.o"
   "CMakeFiles/ex4.dir/main.cpp.o"

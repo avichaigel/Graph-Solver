@@ -148,6 +148,71 @@ CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofirn93/CLionProjects/Solver/MyTestClientHandler.cpp -o CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s
 
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../MyMatrixClientHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o -c /home/ofirn93/CLionProjects/Solver/MyMatrixClientHandler.cpp
+
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofirn93/CLionProjects/Solver/MyMatrixClientHandler.cpp > CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.i
+
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofirn93/CLionProjects/Solver/MyMatrixClientHandler.cpp -o CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.s
+
+CMakeFiles/ex4.dir/Matrix.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ex4.dir/Matrix.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/Matrix.cpp.o -c /home/ofirn93/CLionProjects/Solver/Matrix.cpp
+
+CMakeFiles/ex4.dir/Matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/Matrix.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofirn93/CLionProjects/Solver/Matrix.cpp > CMakeFiles/ex4.dir/Matrix.cpp.i
+
+CMakeFiles/ex4.dir/Matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Matrix.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofirn93/CLionProjects/Solver/Matrix.cpp -o CMakeFiles/ex4.dir/Matrix.cpp.s
+
+CMakeFiles/ex4.dir/Point.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/Point.cpp.o: ../Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ex4.dir/Point.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/Point.cpp.o -c /home/ofirn93/CLionProjects/Solver/Point.cpp
+
+CMakeFiles/ex4.dir/Point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/Point.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofirn93/CLionProjects/Solver/Point.cpp > CMakeFiles/ex4.dir/Point.cpp.i
+
+CMakeFiles/ex4.dir/Point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Point.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofirn93/CLionProjects/Solver/Point.cpp -o CMakeFiles/ex4.dir/Point.cpp.s
+
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../MatrixSolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ex4.dir/MatrixSolver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/MatrixSolver.cpp.o -c /home/ofirn93/CLionProjects/Solver/MatrixSolver.cpp
+
+CMakeFiles/ex4.dir/MatrixSolver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/MatrixSolver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofirn93/CLionProjects/Solver/MatrixSolver.cpp > CMakeFiles/ex4.dir/MatrixSolver.cpp.i
+
+CMakeFiles/ex4.dir/MatrixSolver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MatrixSolver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofirn93/CLionProjects/Solver/MatrixSolver.cpp -o CMakeFiles/ex4.dir/MatrixSolver.cpp.s
+
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../MyParallelServer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ex4.dir/MyParallelServer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/MyParallelServer.cpp.o -c /home/ofirn93/CLionProjects/Solver/MyParallelServer.cpp
+
+CMakeFiles/ex4.dir/MyParallelServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/MyParallelServer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofirn93/CLionProjects/Solver/MyParallelServer.cpp > CMakeFiles/ex4.dir/MyParallelServer.cpp.i
+
+CMakeFiles/ex4.dir/MyParallelServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MyParallelServer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofirn93/CLionProjects/Solver/MyParallelServer.cpp -o CMakeFiles/ex4.dir/MyParallelServer.cpp.s
+
 # Object files for target ex4
 ex4_OBJECTS = \
 "CMakeFiles/ex4.dir/main.cpp.o" \
@@ -156,7 +221,12 @@ ex4_OBJECTS = \
 "CMakeFiles/ex4.dir/MySerialServer.cpp.o" \
 "CMakeFiles/ex4.dir/Solver.cpp.o" \
 "CMakeFiles/ex4.dir/StringReverser.cpp.o" \
-"CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
+"CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o" \
+"CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o" \
+"CMakeFiles/ex4.dir/Matrix.cpp.o" \
+"CMakeFiles/ex4.dir/Point.cpp.o" \
+"CMakeFiles/ex4.dir/MatrixSolver.cpp.o" \
+"CMakeFiles/ex4.dir/MyParallelServer.cpp.o"
 
 # External object files for target ex4
 ex4_EXTERNAL_OBJECTS =
@@ -168,9 +238,14 @@ ex4: CMakeFiles/ex4.dir/MySerialServer.cpp.o
 ex4: CMakeFiles/ex4.dir/Solver.cpp.o
 ex4: CMakeFiles/ex4.dir/StringReverser.cpp.o
 ex4: CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o
+ex4: CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o
+ex4: CMakeFiles/ex4.dir/Matrix.cpp.o
+ex4: CMakeFiles/ex4.dir/Point.cpp.o
+ex4: CMakeFiles/ex4.dir/MatrixSolver.cpp.o
+ex4: CMakeFiles/ex4.dir/MyParallelServer.cpp.o
 ex4: CMakeFiles/ex4.dir/build.make
 ex4: CMakeFiles/ex4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ex4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable ex4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

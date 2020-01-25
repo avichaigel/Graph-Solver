@@ -25,6 +25,7 @@ namespace boot {
             Searcher<Point>* searcher = new AStar<Point>();
             MatrixSolver* solver = new MatrixSolver(searcher);
             CacheManager<string, string>* cm = new FileCacheManager();
+            cm->get("start");
             ClientHandler* handler = new MyMatrixClientHandler(solver, cm);
             server_side::Server* server = new MySerialServer(); //todo change to parallel
             server->open(port, handler);

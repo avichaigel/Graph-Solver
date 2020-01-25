@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Astar.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/BFS.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/BestFS.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/Boot.h">
 			<Option target="ex4"/>
 		</Unit>
@@ -96,6 +105,12 @@
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/ClientHandler.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/CostsCompare.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/DFS.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/FileCacheManager.cpp">
 			<Option target="ex4"/>
 		</Unit>
@@ -103,6 +118,30 @@
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/ISearchable.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Matrix.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Matrix.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MatrixSolver.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MatrixSolver.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyMatrixClientHandler.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyMatrixClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyParallelServer.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyParallelServer.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/MySerialServer.cpp">
@@ -115,6 +154,15 @@
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/MyTestClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Point.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/Point.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/ofirn93/CLionProjects/Solver/SearchByPQ.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/ofirn93/CLionProjects/Solver/Searcher.h">

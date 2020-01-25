@@ -6,8 +6,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ofirn93/CLionProjects/Solver/CacheManager.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/CacheManager.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/FileCacheManager.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/Matrix.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/Matrix.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/MatrixSolver.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MatrixSolver.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/MyMatrixClientHandler.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/MyParallelServer.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MyParallelServer.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/MySerialServer.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MySerialServer.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/MyTestClientHandler.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
+  "/home/ofirn93/CLionProjects/Solver/Point.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/Point.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/Solver.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/Solver.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/StringReverser.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/StringReverser.cpp.o"
   "/home/ofirn93/CLionProjects/Solver/main.cpp" "/home/ofirn93/CLionProjects/Solver/cmake-build-debug/CMakeFiles/ex4.dir/main.cpp.o"

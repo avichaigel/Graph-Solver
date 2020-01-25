@@ -98,7 +98,7 @@ void FileCacheManager::pairSplit(string pair) {
     while ((pos = pair.find(delim)) != string::npos) {
         k = pair.substr(0, pos);
         pair.erase(0, pos + delim.length());
-        v = pair.substr(0, pos);
-        this->prob2str.insert({k, v});
+        v = pair;
+        this->prob2str.insert({v, k});
     }
 }

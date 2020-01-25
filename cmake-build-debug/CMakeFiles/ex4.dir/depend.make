@@ -8,6 +8,39 @@ CMakeFiles/ex4.dir/FileCacheManager.cpp.o: ../CacheManager.h
 CMakeFiles/ex4.dir/FileCacheManager.cpp.o: ../FileCacheManager.cpp
 CMakeFiles/ex4.dir/FileCacheManager.cpp.o: ../FileCacheManager.h
 
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../ISearchable.h
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../Matrix.cpp
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../Matrix.h
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../Point.h
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../State.h
+
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../ISearchable.h
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../Matrix.h
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../MatrixSolver.cpp
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../MatrixSolver.h
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../Point.h
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../Searcher.h
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../Solver.h
+CMakeFiles/ex4.dir/MatrixSolver.cpp.o: ../State.h
+
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../CacheManager.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../ClientHandler.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../FileCacheManager.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../ISearchable.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../Matrix.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../MatrixSolver.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../MyMatrixClientHandler.cpp
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../MyMatrixClientHandler.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../Point.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../Searcher.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../Solver.h
+CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o: ../State.h
+
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../ClientHandler.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../MyParallelServer.cpp
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../MyParallelServer.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../Server.h
+
 CMakeFiles/ex4.dir/MySerialServer.cpp.o: ../CacheManager.h
 CMakeFiles/ex4.dir/MySerialServer.cpp.o: ../ClientHandler.h
 CMakeFiles/ex4.dir/MySerialServer.cpp.o: ../FileCacheManager.h
@@ -23,6 +56,10 @@ CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../MyTestClientHandler.cpp
 CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../MyTestClientHandler.h
 CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../Solver.h
 
+CMakeFiles/ex4.dir/Point.cpp.o: ../Point.cpp
+CMakeFiles/ex4.dir/Point.cpp.o: ../Point.h
+CMakeFiles/ex4.dir/Point.cpp.o: ../State.h
+
 CMakeFiles/ex4.dir/Solver.cpp.o: ../Solver.cpp
 CMakeFiles/ex4.dir/Solver.cpp.o: ../Solver.h
 
@@ -30,14 +67,27 @@ CMakeFiles/ex4.dir/StringReverser.cpp.o: ../Solver.h
 CMakeFiles/ex4.dir/StringReverser.cpp.o: ../StringReverser.cpp
 CMakeFiles/ex4.dir/StringReverser.cpp.o: ../StringReverser.h
 
+CMakeFiles/ex4.dir/main.cpp.o: ../Astar.h
+CMakeFiles/ex4.dir/main.cpp.o: ../BFS.h
+CMakeFiles/ex4.dir/main.cpp.o: ../BestFS.h
 CMakeFiles/ex4.dir/main.cpp.o: ../Boot.h
 CMakeFiles/ex4.dir/main.cpp.o: ../CacheManager.h
 CMakeFiles/ex4.dir/main.cpp.o: ../ClientHandler.h
+CMakeFiles/ex4.dir/main.cpp.o: ../CostsCompare.h
+CMakeFiles/ex4.dir/main.cpp.o: ../DFS.h
 CMakeFiles/ex4.dir/main.cpp.o: ../FileCacheManager.h
+CMakeFiles/ex4.dir/main.cpp.o: ../ISearchable.h
+CMakeFiles/ex4.dir/main.cpp.o: ../Matrix.h
+CMakeFiles/ex4.dir/main.cpp.o: ../MatrixSolver.h
+CMakeFiles/ex4.dir/main.cpp.o: ../MyMatrixClientHandler.h
+CMakeFiles/ex4.dir/main.cpp.o: ../MyParallelServer.h
 CMakeFiles/ex4.dir/main.cpp.o: ../MySerialServer.h
-CMakeFiles/ex4.dir/main.cpp.o: ../MyTestClientHandler.h
+CMakeFiles/ex4.dir/main.cpp.o: ../Point.h
+CMakeFiles/ex4.dir/main.cpp.o: ../SearchByPQ.h
+CMakeFiles/ex4.dir/main.cpp.o: ../Searcher.h
 CMakeFiles/ex4.dir/main.cpp.o: ../Server.h
 CMakeFiles/ex4.dir/main.cpp.o: ../Solver.h
+CMakeFiles/ex4.dir/main.cpp.o: ../State.h
 CMakeFiles/ex4.dir/main.cpp.o: ../StringReverser.h
 CMakeFiles/ex4.dir/main.cpp.o: ../main.cpp
 

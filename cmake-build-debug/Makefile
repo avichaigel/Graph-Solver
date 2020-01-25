@@ -177,6 +177,114 @@ FileCacheManager.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.s
 .PHONY : FileCacheManager.cpp.s
 
+Matrix.o: Matrix.cpp.o
+
+.PHONY : Matrix.o
+
+# target to build an object file
+Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
+
+Matrix.i: Matrix.cpp.i
+
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
+
+MatrixSolver.o: MatrixSolver.cpp.o
+
+.PHONY : MatrixSolver.o
+
+# target to build an object file
+MatrixSolver.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MatrixSolver.cpp.o
+.PHONY : MatrixSolver.cpp.o
+
+MatrixSolver.i: MatrixSolver.cpp.i
+
+.PHONY : MatrixSolver.i
+
+# target to preprocess a source file
+MatrixSolver.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MatrixSolver.cpp.i
+.PHONY : MatrixSolver.cpp.i
+
+MatrixSolver.s: MatrixSolver.cpp.s
+
+.PHONY : MatrixSolver.s
+
+# target to generate assembly for a file
+MatrixSolver.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MatrixSolver.cpp.s
+.PHONY : MatrixSolver.cpp.s
+
+MyMatrixClientHandler.o: MyMatrixClientHandler.cpp.o
+
+.PHONY : MyMatrixClientHandler.o
+
+# target to build an object file
+MyMatrixClientHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.o
+.PHONY : MyMatrixClientHandler.cpp.o
+
+MyMatrixClientHandler.i: MyMatrixClientHandler.cpp.i
+
+.PHONY : MyMatrixClientHandler.i
+
+# target to preprocess a source file
+MyMatrixClientHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.i
+.PHONY : MyMatrixClientHandler.cpp.i
+
+MyMatrixClientHandler.s: MyMatrixClientHandler.cpp.s
+
+.PHONY : MyMatrixClientHandler.s
+
+# target to generate assembly for a file
+MyMatrixClientHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyMatrixClientHandler.cpp.s
+.PHONY : MyMatrixClientHandler.cpp.s
+
+MyParallelServer.o: MyParallelServer.cpp.o
+
+.PHONY : MyParallelServer.o
+
+# target to build an object file
+MyParallelServer.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyParallelServer.cpp.o
+.PHONY : MyParallelServer.cpp.o
+
+MyParallelServer.i: MyParallelServer.cpp.i
+
+.PHONY : MyParallelServer.i
+
+# target to preprocess a source file
+MyParallelServer.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyParallelServer.cpp.i
+.PHONY : MyParallelServer.cpp.i
+
+MyParallelServer.s: MyParallelServer.cpp.s
+
+.PHONY : MyParallelServer.s
+
+# target to generate assembly for a file
+MyParallelServer.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyParallelServer.cpp.s
+.PHONY : MyParallelServer.cpp.s
+
 MySerialServer.o: MySerialServer.cpp.o
 
 .PHONY : MySerialServer.o
@@ -230,6 +338,33 @@ MyTestClientHandler.s: MyTestClientHandler.cpp.s
 MyTestClientHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s
 .PHONY : MyTestClientHandler.cpp.s
+
+Point.o: Point.cpp.o
+
+.PHONY : Point.o
+
+# target to build an object file
+Point.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Point.cpp.o
+.PHONY : Point.cpp.o
+
+Point.i: Point.cpp.i
+
+.PHONY : Point.i
+
+# target to preprocess a source file
+Point.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Point.cpp.i
+.PHONY : Point.cpp.i
+
+Point.s: Point.cpp.s
+
+.PHONY : Point.s
+
+# target to generate assembly for a file
+Point.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Point.cpp.s
+.PHONY : Point.cpp.s
 
 Solver.o: Solver.cpp.o
 
@@ -327,12 +462,27 @@ help:
 	@echo "... FileCacheManager.o"
 	@echo "... FileCacheManager.i"
 	@echo "... FileCacheManager.s"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
+	@echo "... MatrixSolver.o"
+	@echo "... MatrixSolver.i"
+	@echo "... MatrixSolver.s"
+	@echo "... MyMatrixClientHandler.o"
+	@echo "... MyMatrixClientHandler.i"
+	@echo "... MyMatrixClientHandler.s"
+	@echo "... MyParallelServer.o"
+	@echo "... MyParallelServer.i"
+	@echo "... MyParallelServer.s"
 	@echo "... MySerialServer.o"
 	@echo "... MySerialServer.i"
 	@echo "... MySerialServer.s"
 	@echo "... MyTestClientHandler.o"
 	@echo "... MyTestClientHandler.i"
 	@echo "... MyTestClientHandler.s"
+	@echo "... Point.o"
+	@echo "... Point.i"
+	@echo "... Point.s"
 	@echo "... Solver.o"
 	@echo "... Solver.i"
 	@echo "... Solver.s"
