@@ -3,6 +3,8 @@
 
 This program is a server that receives from a multiple clients at a time (hence the server is called Parallel Server) a problem - in our case a matrix with costs (weights) for each entry, and start and end point - and sends back a solution - in our case the steps needed to be taken in order to get from start to end by the cheapest way possible.
 
+At first we create a map that ---- **OFIR TO COMPLETE**
+Then we call a namespace named "boot", and run our program from there. We go to the server, which has a timeout of 2 minutes, and if a client doesn't connect within those 2 minutes, the program ends. When a client is connected, a problem, a matrix, is received by the server, which then sends it to the ClientHandler implementing class, which is called MyMatrixClientHandler
 
 # Code Files
 
@@ -22,7 +24,7 @@ This program is a server that receives from a multiple clients at a time (hence 
 
 ## Design patterns used in code
 
-Command Pattern - Having one Command.h interface, that holds an "execute" method, and multiple different command classes that inherit it, each implementing "execute" in their unique way.
+Bridge - 
 
 # Downloads
 
@@ -46,5 +48,5 @@ For the program to run well, first we compile and then run the program. Once we 
 eyJoaXN0b3J5IjpbMjExMDc4NjY0N119
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODM0MzEwNV19
+eyJoaXN0b3J5IjpbNjU3NDA1NjkwXX0=
 -->
