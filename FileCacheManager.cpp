@@ -33,6 +33,9 @@ string FileCacheManager::get(string problem) {
             return sol;
         }
     } else {
+        if (problem == "start") {
+            return "-1";
+        }
         string name;
         this->count++;
         name.append("Data" + to_string(this->count) + ".txt");
@@ -43,9 +46,9 @@ string FileCacheManager::get(string problem) {
     }
 }
 
- /* sets the current value of the map.
-  *
-  * */
+/* sets the current value of the map.
+ *
+ * */
 void FileCacheManager::setCurrVal(string val) {
     this->currVal = val;
 }
@@ -60,8 +63,8 @@ void FileCacheManager::setCount(int num) {
 void FileCacheManager::mapSaver(string problem) {
     string mapFile = "mapSaver.txt";
     string output;
-    output.append(this->currVal + "~" + problem + "$");
-    ofstream myFile(mapFile);
+    output.append(this->currVal + "~" + problem + "$\n");
+    ofstream myFile(mapFile, fstream::app);
     myFile << output;
     myFile.close();
 }

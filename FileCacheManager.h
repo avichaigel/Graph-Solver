@@ -20,14 +20,11 @@ using namespace std;
 
 class FileCacheManager : public CacheManager<string, string> {
     int count = 0;
-private:
     string currVal;
-public:
-    void setCurrVal(string val);
-
 public:
     void insert(string solution) override ;
     string get(string problem) override;
+    void setCurrVal(string val);
     void setCount(int count);
     void mapSaver(string solution);
     void startMap();

@@ -5,6 +5,8 @@
 
 
 int main(int argc, char* argv[]) {
+    auto myCache = new FileCacheManager();
+    myCache->get("start");
     boot::Main main1;
     if (argc >= 2) {
         main1.main(stoi(argv[1]));
