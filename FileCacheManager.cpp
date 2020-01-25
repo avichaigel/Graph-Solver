@@ -103,6 +103,5 @@ void FileCacheManager::pairSplit(string pair) {
         if (myFile) {
             this->prob2str.insert({v, k});
         }
-
     }
 }
