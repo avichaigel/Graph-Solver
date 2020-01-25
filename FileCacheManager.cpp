@@ -99,6 +99,10 @@ void FileCacheManager::pairSplit(string pair) {
         k = pair.substr(0, pos);
         pair.erase(0, pos + delim.length());
         v = pair;
-        this->prob2str.insert({v, k});
+        fstream myFile(k);
+        if (myFile) {
+            this->prob2str.insert({v, k});
+        }
+
     }
 }
