@@ -10,39 +10,6 @@ void FileCacheManager::insert(string solution) {
     ofstream myFile(filename);
     myFile << solution;
     myFile.close();
-    /*this->count++;
-    string key;
-    key.append("Data");
-    key.append(to_string(this->count));
-    prob2str.insert(solution, key);*/
-
-    /* pseudo code:
-     * first i have a map when the key is a solution and the value is my way to name it
-     * then, i
-
-
-    /*
-    //check if key already exists in map, and if so change its list position, and cache value
-    auto it = prob2str.find(key);
-    if (it != prob2str.end()) {
-        lruList.remove(key);
-        lruList.push_front(key);
-        it->second = obj;
-    } else { // if no such key in map
-        // if cache is packed, erase lru item
-        if (lruList.size() == capacity) {
-            string last = lruList.back();
-            lruList.pop_back();
-            prob2str.erase(last);
-        }
-        lruList.push_front(key);
-        prob2str.insert({key, obj});
-    }
-    ofstream outFile;
-    outFile.open(key+to_string(this->count), ios::binary); // if file exists, overwrites it by default
-    outFile.write((char*)&obj, sizeof(obj));
-    outFile.close();
-     */
 }
 
 string FileCacheManager::get(string problem) {
@@ -74,32 +41,6 @@ string FileCacheManager::get(string problem) {
         mapSaver(problem);
         return "-1";
     }
-
-    /*auto it = sol2str.find(key);
-    if (it != sol2str.end()) { //if key exists already, move to beginning of list and then return it from cache map
-        lruList.remove(key);
-        lruList.push_front(key);
-        return it->second;
-    }
-
-    // if we got here, this means no such key exists in the cache. draw it from file
-    ifstream inFile;
-    string obj;
-    inFile.open(key+to_string(this->count), ios::binary);
-    if (!inFile) { // if no such file exists
-        throw ("File opening error");
-    }
-    inFile.read((char*)&obj, sizeof(obj));
-    inFile.close();
-    // if cache is packed, erase lru item
-    if (lruList.size() == capacity) {
-        string last = lruList.back();
-        lruList.pop_back();
-        sol2str.erase(last);
-    }
-    lruList.push_front(key);
-    sol2str.insert({key,obj});
-    return obj;*/
 }
 
  /* sets the current value of the map.
@@ -119,26 +60,12 @@ void FileCacheManager::setCount(int num) {
 void FileCacheManager::mapSaver(string problem) {
     string mapFile = "mapSaver.txt";
     string output;
-    output.append(this->currVal + "," + problem + "$");
+    output.append(this->currVal + "~" + problem + "$");
     ofstream myFile(mapFile);
     myFile << output;
     myFile.close();
 }
 
-
-// idea from https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
-void FileCacheManager::pairSplit(string pair) {
-    string delim = ",";
-    // key and value
-    string k, v;
-    size_t pos = 0;
-    while ((pos = pair.find(delim)) != string::npos) {
-        k = pair.substr(0, pos);
-        pair.erase(0, pos + delim.length());
-        v = pair.substr(0, pos);
-        this->prob2str.insert({k, v});
-    }
-}
 
 void FileCacheManager::startMap() {
     ifstream myFile("mapSaver.txt");
@@ -154,6 +81,21 @@ void FileCacheManager::startMap() {
         string token;
         while (getline(iss, token, '$')) {
             pairSplit(token);
+            this-> count += 1;
         }
+    }
+}
+
+// idea from https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+void FileCacheManager::pairSplit(string pair) {
+    string delim = "~";
+    // key and value
+    string k, v;
+    size_t pos = 0;
+    while ((pos = pair.find(delim)) != string::npos) {
+        k = pair.substr(0, pos);
+        pair.erase(0, pos + delim.length());
+        v = pair.substr(0, pos);
+        this->prob2str.insert({k, v});
     }
 }
