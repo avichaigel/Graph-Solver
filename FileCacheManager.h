@@ -21,7 +21,9 @@ using namespace std;
 class FileCacheManager : public CacheManager<string, string> {
     int count = 0;
     string currVal;
+
 public:
+    // please look at the comments on the cpp file
     void insert(string solution) override ;
     string get(string problem) override;
     void setCurrVal(string val);

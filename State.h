@@ -13,7 +13,7 @@ class State {
     double pathCost;
     double hueristicDist;
 
-
+// a class that represent every state that could be used in our code
 public:
     State(T myState, double myCost) : state(myState), pathCost(myCost), cost(myCost), hueristicDist(0) {
         this->cameFrom = nullptr;

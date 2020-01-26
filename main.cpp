@@ -3,7 +3,7 @@
 #include "StringReverser.h"
 #include "Boot.h"
 
-
+// starting the program
 int main(int argc, char* argv[]) {
     boot::Main main1;
     if (argc >= 2) {

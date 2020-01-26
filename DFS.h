@@ -17,6 +17,8 @@ class DFS: public Searcher<T> {
     // the path of states we return
     vector<State<T>*> myPath;
 
+public:
+    // the implementation of the DFS algorithm
     vector<State<T> *> search(ISearchable<T> *searchable) override {
         this->nodesVisited.clear();
         this->myPath.clear();
@@ -58,6 +60,7 @@ class DFS: public Searcher<T> {
         return v;
     }
 
+    // function that checks if a node was visited
     bool isVisited(State<T>* node) {
         auto it = find(this->nodesVisited.begin(), this->nodesVisited.end(), node);
         if (it != this->nodesVisited.end()) {
@@ -68,6 +71,7 @@ class DFS: public Searcher<T> {
         }
     }
 
+    // func that returns the a reversed vector with the best path
     vector<State<T>*> bestPath(){
         vector<State<T>*> path;
         int i;

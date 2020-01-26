@@ -20,6 +20,7 @@
 namespace boot {
     class Main {
     public:
+        // initiate all the necessary classes to run the program
         void main(int port) {
             Searcher<Point>* searcher = new AStar<Point>();
             MatrixSolver* solver = new MatrixSolver(searcher);

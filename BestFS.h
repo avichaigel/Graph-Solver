@@ -13,7 +13,7 @@ using namespace std;
 template<typename T>
 class BestFS: public SearchByPQ<T> {
 public:
-
+    // the implementation of the BestFS algorithm
     vector<State<T>*> search(ISearchable<T> *s) override {
         while (!this->openQueue.empty()) {
             this->openQueue.pop();
@@ -58,6 +58,8 @@ public:
             }
         }
     }
+
+    // function that checks if a state is in the "Closed" vector
     bool isInClosed(State<T>* s, vector<State<T>*> v) {
         int i;
         for (i = 0; i < v.size(); i++) {
@@ -69,6 +71,7 @@ public:
         return false;
     }
 
+    // function that reloads the queue
     void reloadQ(State<T>* s) {
         State<T>* tmpS;
         // temporary queue

@@ -11,7 +11,7 @@
 
 MyTestClientHandler::MyTestClientHandler(Solver<string, string>*, CacheManager<string, string>*):
 solver(solver), cm(cm){}
-
+// func that reads problem file from the client
 void MyTestClientHandler::handleClient(int client_socketfd) {
     //loop reads line by  line, until line is "end"
     while (true) {

@@ -20,7 +20,7 @@ class BFS: public Searcher<T> {
     vector<State<T>*> myPath;
 
 public:
-
+    // the implementation of the BFS algorithm
     vector<State<T> *> search(ISearchable<T> *searchable) override {
         this->nodesVisited.clear();
         this->myPath.clear();
@@ -64,6 +64,7 @@ public:
         return v;
     }
 
+    // function that checks if a node was visited
     bool isVisited(State<T>* s, vector<State<T>*> v) {
         int i;
         for (i = 0; i < v.size(); i++) {
@@ -75,6 +76,7 @@ public:
         return false;
     }
 
+    // func that returns the a reversed vector with the best path
     vector<State<T>*> bestPath(){
         vector<State<T>*> path;
         int i;

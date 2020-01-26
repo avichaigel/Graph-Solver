@@ -5,6 +5,7 @@
 #include "FileCacheManager.h"
 #include <sstream>
 
+// func that inserts solution to a file
 void FileCacheManager::insert(string solution) {
     string filename = this->currVal;
     ofstream myFile(filename);
@@ -13,12 +14,11 @@ void FileCacheManager::insert(string solution) {
 }
 
 string FileCacheManager::get(string problem) {
-    /* pseudo code:
+    /*
      * here i check if i have a solution to a problem
      * if i have, i return it
      * otherwise, i have to pass the problem to the solver and he solves it
-     * in the meantime, i save in my own map the problem as key and the representative string of it as value.
-     * then i add...*/
+     * in the meantime, i save in my own map the problem as key and the representative string of it as value.*/
     if (this->prob2str.empty()) {
         startMap();
     }
@@ -70,6 +70,7 @@ void FileCacheManager::mapSaver(string problem) {
 }
 
 
+// func that start the map of the cache manager
 void FileCacheManager::startMap() {
     ifstream myFile("mapSaver.txt");
     if (!myFile) {
@@ -90,6 +91,7 @@ void FileCacheManager::startMap() {
 }
 
 // idea from https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+// func that reads old solutions from file
 void FileCacheManager::pairSplit(string pair) {
     string delim = "~";
     // key and value

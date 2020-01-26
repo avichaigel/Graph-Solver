@@ -7,7 +7,7 @@
 #include "State.h"
 #include "ISearchable.h"
 
-
+// an interface that represent every searcher in our program (in our case - searching algorithm)
 template <typename T>
 class Searcher{
 public:

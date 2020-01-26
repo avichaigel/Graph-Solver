@@ -3,7 +3,7 @@
 //
 
 #include "Point.h"
-
+// out own implementation for the states of the problem in this program
 int Point::getI() const {
     return i;
 }

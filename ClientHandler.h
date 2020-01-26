@@ -15,6 +15,7 @@ class ClientHandler {
 protected:
     mutex mutex_lock;
 public:
+    // function that guides every client in the program how to act
     virtual void handleClient(int client_socketfd) = 0;
 };
 

@@ -20,6 +20,7 @@ template<class T>
     priority_queue<State<T>*, vector<State<T>*>, CostsCompareAstar> pQ;
 
 public:
+     // the implementation of the a star algorithm
     vector<State<T>*> search(ISearchable<T> *s) override {
         while (!this->pQ.empty()) {
             this->pQ.pop();
@@ -72,47 +73,7 @@ public:
         }
     }
 
-    /*vector<State<T>*> search(ISearchable<T> *s) override {
-        this->myStates.clear();
-        this->setNodeEval(0);
-        while (!this->pQ.empty()) {
-            this->pQ.pop();
-        }
-        this->pQ.push((s->getInitialState()));
-        while (!this->pQ.empty()) {
-            State<T> *n = this->pQ.top();
-            this->pQ.pop();
-            this->nodeEval++;
-            this->myStates.push_back(n);
-            // if you reached your goal
-            if (s->isGoalState(n)) {
-                // return best path
-                return this->bestPath(n,s);
-            }
-            vector<State<T>*> states = s->getAllPossibleStates(n);
-            for (State<T>* node : states) {
-                double newPathCost = n->getPathCost() + node->getCost();
-                // heuristic dist from the current node to our goal.
-                double heuristicDist = s->findDistance(node, s->getGoalState());
-                // the combined cost that matters to Astar algorithm
-                double aStarCost = heuristicDist + newPathCost;
-                if ((this->myStates.find(node) == this->myStates.end) && !(this->pQContains(node))) {
-                    node->setCameFrom(n);
-                    if (node->getFather() != nullptr) {
-                        node->setPathCost(node->getCost() + node->getFather()->getPathCost());
-                    }
-                    this->openQueue.emplace(node);
-                } else {
-                    if (newPathCost < node->getPathCost()) {
-                        node->setCameFrom(n);
-                        node->setPathCost(newPathCost);
-                        this->openQueue.emplace(node);
-                    }
-                }
-            }
-        }
-    }*/
-
+     // function that checks if a state is in the "open" priority queue
     bool pQContains(State<T> *s) {
         int flag = 0;
         State<T> *tmpS;
@@ -134,6 +95,7 @@ public:
         return flag != 0;
     }
 
+     // function that checks if a state is in the "Closed" vector
     bool isInClosed(State<T>* s, vector<State<T>*> v) {
         int i;
         for (i = 0; i < v.size(); i++) {
@@ -145,6 +107,7 @@ public:
         return false;
     }
 
+    // function that reloads the queue
     void reloadQ(State<T>* s) {
         State<T>* tmpS;
         // temporary queue

@@ -16,6 +16,7 @@ using namespace std;
 class Matrix : public ISearchable<Point> {
 public:
 
+// please look at the comments in the cpp file
 private:
     vector<vector<State<Point>*>> myMatrix;
     State<Point>* initialState;

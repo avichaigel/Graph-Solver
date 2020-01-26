@@ -17,9 +17,9 @@ protected:
     // a map that stores problems solutions (string) as keys, and the value is my way to name the solution
     // the value will be used as a file name of the solution in the disk.
     unordered_map<string, string> prob2str;
-//    list<string> lruList;
-//    unsigned int capacity{};
+
 public:
+    // functions that insert and draw values from the cache
     virtual void insert(S solution) = 0;
     virtual S get(P problem) = 0;
 };

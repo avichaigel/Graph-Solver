@@ -7,7 +7,7 @@
 
 
 #include "Server.h"
-
+// please see the comments in the cpp file
 class MyParallelServer : public server_side::Server {
 private:
     int socketCounter = 0;

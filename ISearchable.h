@@ -13,6 +13,7 @@ using namespace std;
 template <typename T>
 class ISearchable {
 public:
+    // an interface that defines the behaviour of every problem in our program
     virtual State<T>* getInitialState() = 0;
     virtual bool isGoalState(State<T>* s) = 0;
     virtual vector<State<T>*> getAllPossibleStates(State<T> *s) = 0;

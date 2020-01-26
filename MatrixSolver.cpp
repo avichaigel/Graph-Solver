@@ -5,6 +5,7 @@
 #include <iostream>
 #include "MatrixSolver.h"
 
+// function that get the solution of a problem and convert it to a visible string
 string MatrixSolver::solve(ISearchable<Point> *problem) {
     vector<State<Point>*> solution = searcher->search(problem);
     string path, direction;

@@ -12,7 +12,7 @@
 
 using namespace std;
 
-//Object Adapter
+//Object Adapter, please look at the comments in the cpp file
 
 class MatrixSolver : public Solver<ISearchable<Point>*, string>{
 private:

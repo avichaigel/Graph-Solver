@@ -8,7 +8,7 @@
 #include "ClientHandler.h"
 
 using namespace std;
-
+// an interface that represent every server that could be used in the program
 namespace server_side {
     class Server {
     public:
