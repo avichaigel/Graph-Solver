@@ -20,14 +20,6 @@ class BFS: public Searcher<T> {
     vector<State<T>*> myPath;
 
 public:
-//    BFS() {
-//        vector<State<T>*> a;
-//        vector<State<T>*> b;
-//        this->nodesVisited = a;
-//        this->myPath = b;
-//        this->nodeVisitedNum = 0;
-//        this->pathCost = 0;
-//    }
 
     vector<State<T> *> search(ISearchable<T> *searchable) override {
         this->nodeVisitedNum = 0;
@@ -39,14 +31,16 @@ public:
         State<T>* currNode = searchable->getInitialState();
         State<T>* goalNode = searchable->getGoalState();
         this->nodesVisited.push_back(currNode);
+        currNode->setCameFrom(currNode);
         Q.push(currNode);
         while (!Q.empty()) {
             currNode = Q.front();
             Q.pop();
             this->nodeVisitedNum += 1;
             if (!currNode->equals(goalNode)) {
-                for (State<T> *adj : searchable->getAllPossibleStates(currNode)) {
-                    if (!(this->isVisited(adj))) {
+                vector<State<T>*> states = searchable->getAllPossibleStates(currNode);
+                for (State<T> *adj : states) {
+                    if (!(this->isVisited(adj, this->nodesVisited))) {
                         adj->setCameFrom(currNode);
                         this->nodesVisited.emplace_back(adj);
                         Q.push(adj);
@@ -60,7 +54,7 @@ public:
                     this->pathCost += currNode->getCost();
                     this->myPath.insert(this->myPath.begin(), currNode);
                 }
-                return this->myPath;
+                return bestPath(currNode, searchable);
             }
         }
         // returns an empty vector if there is no path
@@ -68,14 +62,24 @@ public:
         return v;
     }
 
-    bool isVisited(State<T>* node) {
-        auto it = find(this->nodesVisited.begin(), this->nodesVisited.end(), node);
-        if (it != this->nodesVisited.end()) {
-            return true;
+    bool isVisited(State<T>* s, vector<State<T>*> v) {
+        int i;
+        for (i = 0; i < v.size(); i++) {
+            State<T>* tmp = v[i];
+            if (tmp->getState() == s->getState()) {
+                return true;
+            }
         }
-        else {
-            return false;
+        return false;
+    }
+
+    vector<State<T>*> bestPath(State<T> *s, ISearchable<T> *searchable){
+        vector<State<T>*> path;
+        int i;
+        for (i = this->myPath.size() - 1; i > 0; i--) {
+            path.push_back(this->myPath.at(i));
         }
+        return path;
     }
 };
 
