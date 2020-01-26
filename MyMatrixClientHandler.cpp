@@ -12,10 +12,7 @@
 #include <vector>
 #include <algorithm>
 
-MyMatrixClientHandler::MyMatrixClientHandler(MatrixSolver* solver1, CacheManager<string, string>* cm1) {
-    this->cm = cm1;
-    this->solver = solver1;
-}
+MyMatrixClientHandler::MyMatrixClientHandler(MatrixSolver* solver1, CacheManager<string, string>* cm1): cm(cm1), solver(solver1) {}
 
 void MyMatrixClientHandler::handleClient(int client_socketfd) {
     vector<string> matrixLines = readFromBuffer(client_socketfd); //every node in the vector is a line of the matrix, except for the last two
@@ -41,27 +38,31 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) {
     if (is_sent == -1) {
         cout << "Error while sending data to client" << endl;
     }
+    solutionCounter++;
+    cout << "solution number " << solutionCounter << " sent to client" << endl;
 }
 
 vector<string> MyMatrixClientHandler::readFromBuffer(int client_socketfd) {
     string problem;
     vector<string> line;
+    char buffer[1];
+    int valread;
     //loop reads char by char until \n, then adds the received string to the vector
     while (true) {
-        char buffer[1];
-            int valread = read(client_socketfd, buffer, 1);
-        if (valread < 1) {
-            cerr << "Error while reading from client" << endl;
-        }
-        //read until \n, and when string is "end" break loop
-        if (buffer[0]!='\n') {
-            problem += buffer[0];
-        } else {
-            if (problem == "end") {
-                break;
+        if (problem != "end") {
+            valread = read(client_socketfd, buffer, 1);
+            if (valread < 1) {
+                cerr << "Error while reading from client" << endl;
             }
-            line.push_back(problem);
-            problem = "";
+            //read until \n, and when string is "end" break loop
+            if (buffer[0] != '\n') {
+                problem += buffer[0];
+            } else {
+                line.push_back(problem);
+                problem = "";
+            }
+        } else {
+            break;
         }
     }
     return line;

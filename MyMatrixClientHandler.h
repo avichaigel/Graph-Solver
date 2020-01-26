@@ -18,6 +18,7 @@ class MyMatrixClientHandler : public ClientHandler {
 private:
     MatrixSolver* solver;
     CacheManager<string, string>* cm;
+    int solutionCounter = 0;
 public:
     MatrixSolver* getSolver() const;
     CacheManager<string, string> *getCm() const;

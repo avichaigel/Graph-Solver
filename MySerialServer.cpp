@@ -38,10 +38,10 @@ void start(int port, ClientHandler* c) {
     int timeout_in_seconds = 120;
     tv.tv_sec = timeout_in_seconds;
     tv.tv_usec = 0;
-    setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
-    bool isConnected = true;
-    while (isConnected) { //todo check how to stop it
+    while (true) { //todo check how to stop it
+        setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
+
         // accepting a client
         int addrlen = sizeof(address);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
