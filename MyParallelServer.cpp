@@ -42,22 +42,20 @@ void MyParallelServer::start(int port, ClientHandler* c) {
     tv.tv_usec = 0;
 
     while (true) {
-        if (socketCounter < 10) {
-            setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
+        setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
-            // accepting a client
-            int addrlen = sizeof(address);
-            int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
+        // accepting a client
+        int addrlen = sizeof(address);
+        int client_socket = accept(socketfd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
 
-            if (client_socket == -1) {
-                cerr << "Error accepting new client, time is out" << endl;
-                break;
-            } else {
-                cout << "Connected to a new client" << endl;
-            }
-            thread thread(&MyParallelServer::callThread, this, client_socket, c);
-            thread.detach();
+        if (client_socket == -1) {
+            cerr << "Error accepting new client, time is out" << endl;
+            break;
+        } else {
+            cout << "Connected to a new client" << endl;
         }
+        thread thread(&MyParallelServer::callThread, this, client_socket, c);
+        thread.detach();
     }
     ::close(socketfd);
 }

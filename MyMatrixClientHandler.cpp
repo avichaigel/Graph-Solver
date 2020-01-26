@@ -31,8 +31,8 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) {
             cerr << "ERROR: Goal state's cost is -1, unreachable" << endl;
             return;
         }
-        solution = this->solver->solve(matrix);
         mutex_lock.lock();
+        solution = this->solver->solve(matrix);
         getCm()->insert(solution);
         mutex_lock.unlock();
     }
