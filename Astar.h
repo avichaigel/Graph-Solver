@@ -21,6 +21,10 @@ class AStar : public SearchByPQ<T> {
 
 public:
     vector<State<T>*> search(ISearchable<T> *s) override {
+        while (!this->pQ.empty()) {
+            this->pQ.pop();
+        }
+        this->myStates.clear();
         this->pQ.push((s->getInitialState()));
         State<T> *n = this->pQ.top();
         n->setMyHueristicDist(s->findDistance(n, s->getGoalState()));

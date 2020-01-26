@@ -15,6 +15,10 @@ class BestFS: public SearchByPQ<T> {
 public:
 
     vector<State<T>*> search(ISearchable<T> *s) override {
+        while (!this->openQueue.empty()) {
+            this->openQueue.pop();
+        }
+        this->myStates.clear();
         this->addOpenQueue(s->getInitialState());
         while (!this->openQueue.empty()) {
             State<T> *n = this->openQueue.top();
