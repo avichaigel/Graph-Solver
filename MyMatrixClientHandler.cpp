@@ -33,7 +33,6 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) {
         mutex_lock.unlock();
     }
 
-    //todo maybe check if solution is longer than 1024 and then send by parts
     int is_sent = send(client_socketfd, solution.c_str(), solution.length(), 0);
     if (is_sent == -1) {
         cout << "Error while sending data to client" << endl;

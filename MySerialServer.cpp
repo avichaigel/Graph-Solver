@@ -39,7 +39,7 @@ void start(int port, ClientHandler* c) {
     tv.tv_sec = timeout_in_seconds;
     tv.tv_usec = 0;
 
-    while (true) { //todo check how to stop it
+    while (true) {
         setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
         // accepting a client
@@ -64,5 +64,4 @@ void MySerialServer::open(int port, ClientHandler* c) {
 }
 
 void MySerialServer::close() {
-    //todo implement this: change the flag in the while to false, and close the socket
 }

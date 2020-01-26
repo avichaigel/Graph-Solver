@@ -66,14 +66,13 @@ void MyParallelServer::open(int port, ClientHandler* c) {
 }
 
 void MyParallelServer::close() {
-    //todo implement this: change the flag in the while to false, and close the socket
 }
 
 void MyParallelServer::callThread(int client_socketfd, ClientHandler* c) {
     this->socketCounter++;
     cout << "thread opened, " << socketCounter << " threads are now open" << endl;
     c->handleClient(client_socketfd);
-    ::close(client_socketfd); //closing the client socket //todo check what's the deal with the "::" and if it works or not
+    ::close(client_socketfd); //closing the client socket
     this->socketCounter--;
     cout << "thread closed, " << socketCounter << " threads are still open" << endl;
 }
