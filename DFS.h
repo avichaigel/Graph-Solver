@@ -27,6 +27,7 @@ class DFS: public Searcher<T> {
         State<T>* goalNode = searchable->getGoalState();
         this->nodesVisited.push_back(currNode);
         myStack.push(currNode);
+        currNode->setCameFrom(currNode);
         while (!myStack.empty()) {
             currNode = myStack.top();
             myStack.pop();
@@ -43,11 +44,11 @@ class DFS: public Searcher<T> {
                 this->pathCost += currNode->getCost();
                 this->myPath.insert(this->myPath.begin(), currNode);
                 while (!currNode->equals(firstNode)) {
-                    currNode = currNode->getCameFrom();
+                    currNode = currNode->getFather();
                     this->pathCost += currNode->getCost();
                     this->myPath.insert(this->myPath.begin(), currNode);
                 }
-                return this->myPath;
+                return bestPath();
             }
         }
         // returns an empty vector if there is no path
@@ -63,6 +64,15 @@ class DFS: public Searcher<T> {
         else {
             return false;
         }
+    }
+
+    vector<State<T>*> bestPath(){
+        vector<State<T>*> path;
+        int i;
+        for (i = this->myPath.size() - 1; i > 0; i--) {
+            path.push_back(this->myPath.at(i));
+        }
+        return path;
     }
 };
 

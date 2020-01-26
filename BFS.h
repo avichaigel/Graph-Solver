@@ -54,7 +54,7 @@ public:
                     this->pathCost += currNode->getCost();
                     this->myPath.insert(this->myPath.begin(), currNode);
                 }
-                return bestPath(currNode, searchable);
+                return bestPath();
             }
         }
         // returns an empty vector if there is no path
@@ -73,7 +73,7 @@ public:
         return false;
     }
 
-    vector<State<T>*> bestPath(State<T> *s, ISearchable<T> *searchable){
+    vector<State<T>*> bestPath(){
         vector<State<T>*> path;
         int i;
         for (i = this->myPath.size() - 1; i > 0; i--) {
