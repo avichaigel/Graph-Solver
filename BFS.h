@@ -78,7 +78,7 @@ public:
     vector<State<T>*> bestPath(){
         vector<State<T>*> path;
         int i;
-        for (i = this->myPath.size() - 1; i > 0; i--) {
+        for (i = this->myPath.size() - 1; i >= 0; i--) {
             path.push_back(this->myPath.at(i));
         }
         return path;
