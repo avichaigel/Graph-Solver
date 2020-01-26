@@ -25,6 +25,7 @@ public:
             this->pQ.pop();
         }
         this->myStates.clear();
+        this->setNodeEval(0);
         this->pQ.push((s->getInitialState()));
         this->pQ.top()->setCameFrom(s->getInitialState());
         State<T> *n = this->pQ.top();

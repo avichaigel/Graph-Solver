@@ -19,6 +19,7 @@ public:
             this->openQueue.pop();
         }
         this->myStates.clear();
+        this->setNodeEval(0);
         this->addOpenQueue(s->getInitialState());
         this->openQueue.top()->setCameFrom(s->getInitialState());
         while (!this->openQueue.empty()) {
