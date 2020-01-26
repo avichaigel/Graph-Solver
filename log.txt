@@ -1,0 +1,669 @@
+commit b5aecb19b85b708506b65eceeb377e0d4077aa37
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 12:05:24 2020 +0200
+
+    Update
+
+commit d8677268e53472c74b5d410731ec23151d1b1c43
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 11:32:20 2020 +0200
+
+    Update
+
+commit caa7d619e5f06941a36f6862b81ae38170d71d1e
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 11:30:58 2020 +0200
+
+    Update
+
+commit a6d4a54b38f765b401bd2853a77b65ee4955d2e4
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 11:23:19 2020 +0200
+
+    Update
+
+commit 22a37fc53fbe6f85d1fb6fb1a682901338fb4953
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 26 10:36:13 2020 +0200
+
+    final
+
+commit c16bf9bfe41785badeb485261694aeb1c75d6557
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 26 10:28:45 2020 +0200
+
+    progress
+
+commit 893d1469c7251404050eda95b1f7f96ab48e6254
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 09:37:25 2020 +0200
+
+    Update
+
+commit 3c868822121ed366df98e27d7d67f0c81c0d0782
+Merge: 8a94f8c e65b40f
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 09:25:00 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8a94f8cc6eceb496244ae476df4c8d2843d2e9d2
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 09:24:49 2020 +0200
+
+    Update
+
+commit e65b40fdeb9da024904b96ab29b7750333bcccb1
+Author: avichaigel <59146878+avichaigel@users.noreply.github.com>
+Date:   Sun Jan 26 01:06:44 2020 +0200
+
+    README.md updated from https://stackedit.io/
+
+commit 66c1b528d34887766b49d78022c060c1638003a1
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 00:54:41 2020 +0200
+
+    Update
+
+commit 166d061ed13e4fa7d1c390613097f258fca38a93
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 00:52:23 2020 +0200
+
+    Update
+
+commit 4083386925551e3ba3346d44b511b52f574560f7
+Merge: e9610df a0dcfd7
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 00:52:12 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e9610dfb375c250ca02a3d99a73cee60a40e89bc
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 00:51:44 2020 +0200
+
+    Update
+
+commit a0dcfd7173a70a78c3dcec2464ac242ee8039841
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:28:02 2020 +0200
+
+    Delete progress.marks
+
+commit 3fe1e4cbae605f869a8ccd2501d487b4666a1b93
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:27:52 2020 +0200
+
+    Delete Makefile2
+
+commit 76502514ec8366391fd6ba052e193f85b7487eca
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:27:32 2020 +0200
+
+    Delete DependInfo.cmake
+
+commit 42d49e14d0e805d879c07260198a719d16158fe8
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:27:24 2020 +0200
+
+    Delete build.make
+
+commit 54375f7c5981505d7c1e7cf05f3cbd11161da72a
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:27:15 2020 +0200
+
+    Delete cmake_clean.cmake
+
+commit b71b01e559b9435d72b7e6fa8aee6fe5cfa79d46
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:27:06 2020 +0200
+
+    Delete depend.make
+
+commit be1e48a8b8272a62aea06945a70ac0e769c13ee7
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:26:55 2020 +0200
+
+    Delete link.txt
+
+commit be34c97fd543204cffae076d3831a4e469d33cb6
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:26:46 2020 +0200
+
+    Delete progress.make
+
+commit 1981867f0cee122b6711e415535b3c57f5817d7d
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:26:30 2020 +0200
+
+    Delete Makefile
+
+commit 104ed7f2be0d06c531b69e10022288b978af0b58
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 00:25:46 2020 +0200
+
+    Delete ex4.cbp
+
+commit 3b4a29a29ddaf72e440d7cc742a54b42c5d63c10
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 00:24:11 2020 +0200
+
+    Another try
+
+commit fe8269555ecbe5312da7cf43d0c348f82e90fc99
+Merge: 8423560 a734b76
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sat Jan 25 23:03:07 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 84235605eaed0f7fb4b72c6f24b3b4507a3c2316
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sat Jan 25 23:02:56 2020 +0200
+
+    Another try
+
+commit a734b7685b79c531e4c20bac6c29a8033c1f7910
+Author: avichaigel <59146878+avichaigel@users.noreply.github.com>
+Date:   Sat Jan 25 23:00:28 2020 +0200
+
+    README.md updated from https://stackedit.io/
+
+commit 0ed06789950a8b7408599bd30ac22af4171d3e5c
+Author: avichaigel <59146878+avichaigel@users.noreply.github.com>
+Date:   Sat Jan 25 22:55:30 2020 +0200
+
+    README.md updated from https://stackedit.io/
+
+commit ab5e85d7d1517372cce226806630a21473cae6d7
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sat Jan 25 21:36:16 2020 +0200
+
+    File Cache Manager is working great!
+
+commit f126e70988733515003e0dd4c57d9fe0c8558c8b
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 24 22:15:39 2020 +0200
+
+    Awesome it works!
+
+commit 1b4ad846c64c9028f63911ef3ffc053ac019defc
+Merge: ff75684 5307ba9
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 24 14:33:12 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       Matrix.cpp
+
+commit ff7568437df37960b0e5fe4179cbfd9720384862
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 24 14:32:09 2020 +0200
+
+    Update - the algorithm works :)
+
+commit 5307ba9e8e8602be28f71777ef182b0383f6b3a0
+Author: avichaigel <avichaig@gmail.com>
+Date:   Fri Jan 24 13:28:18 2020 +0200
+
+    progress
+
+commit 39977ad75e52aaa455e89b7b4384f7fb8fe68245
+Author: avichaigel <avichaig@gmail.com>
+Date:   Fri Jan 24 01:25:59 2020 +0200
+
+    progress
+
+commit c98c0d8f81759a7e932e655add26bf819ff46bc8
+Author: avichaigel <avichaig@gmail.com>
+Date:   Fri Jan 24 01:17:31 2020 +0200
+
+    progress
+
+commit 04f0c60e5b1332d8a9fc55bc7bb33b76222661f5
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 18:25:25 2020 +0200
+
+    progress
+
+commit fe54ab49f252d5b44c761243924e52cac2c2a528
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 16:58:33 2020 +0200
+
+    progress
+
+commit 6131a18ef72fd2871599409aedd1b0d162cf3a0d
+Merge: 44e5937 21d1a35
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 15:55:58 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ISearchable.h
+
+commit 44e5937d5a17d66de50c3e77850aef79ee1d0b86
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 15:55:33 2020 +0200
+
+    progress
+
+commit 21d1a35de5b023682b2b03781db897868fedf96f
+Merge: 3d90b8c 5d7689e
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Thu Jan 23 15:52:40 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3d90b8c23ad4c5a8329f0ac5208a672303bdf9e0
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Thu Jan 23 15:52:28 2020 +0200
+
+    Another try
+
+commit 5d7689e8f0b2b706ca12bab8900bc315b7e82a80
+Merge: 322877b 28091a8
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 15:45:57 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       ISearchable.h
+    #       Matrix.h
+
+commit 322877bf9334538d0f7364090596837c667859e5
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 15:44:50 2020 +0200
+
+    progress
+
+commit 28091a87277b94d44aae2fad0813c2457da21127
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Thu Jan 23 14:47:33 2020 +0200
+
+    Update
+
+commit e3456dc8f7cedc0b7af4875903136b956d256a56
+Merge: d4193e3 ff42d8f
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Thu Jan 23 14:17:29 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d4193e3da41044ccce1c55448ca60636f59910eb
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Thu Jan 23 14:17:17 2020 +0200
+
+    Another try
+
+commit ff42d8fcd80fb37f7108a4078f6431282bc6accf
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 23 14:13:40 2020 +0200
+
+    progress
+
+commit ebe25ea3393141478d156f56142b6af8228b2aef
+Merge: dc07aad 06d7e18
+Author: avichaigel <avichaig@gmail.com>
+Date:   Wed Jan 22 23:09:39 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       Boot.h
+
+commit 06d7e184d1c663d0f6a9db91526c4d7185f9c175
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 23:08:22 2020 +0200
+
+    Another try
+
+commit 7fe2677ad3ed2c486fa469df83e8716bb7e8f19c
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 20:44:13 2020 +0200
+
+    Another try
+
+commit dc07aadeb5f5fbe9dae1678c9d845247da322d3f
+Author: avichaigel <avichaig@gmail.com>
+Date:   Wed Jan 22 20:35:21 2020 +0200
+
+    progress
+
+commit 98fe1b4b40a78fc10ed97cbac27e800c0a3e2b44
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 19:54:22 2020 +0200
+
+    Another try
+
+commit e7cddbe3f1346ad9999be21f09cc300f493b19e9
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 19:45:17 2020 +0200
+
+    Another try
+
+commit bd0ee440637423f30cdb5601da94bde3c2bb1f92
+Merge: e3933e0 cf46a34
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 19:35:37 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e3933e00c4ea101b056749707e1c46d2c2167900
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 19:34:57 2020 +0200
+
+    Another try
+
+commit cf46a34fdc28b51ad7ef138ea85816aeb86f3b20
+Author: avichaigel <avichaig@gmail.com>
+Date:   Wed Jan 22 18:19:39 2020 +0200
+
+    progress
+
+commit 535d48535e00c9c3253d3248c0c68133adcd9a65
+Merge: fe5a39c acadc3f
+Author: avichaigel <avichaig@gmail.com>
+Date:   Wed Jan 22 18:18:30 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       BestFS.h
+    #       CMakeLists.txt
+
+commit fe5a39cb1fe895d808cef3149acfe2e32cd91cc1
+Author: avichaigel <avichaig@gmail.com>
+Date:   Wed Jan 22 18:18:13 2020 +0200
+
+    progress
+
+commit acadc3f5bb6be64135fbae98b00b0c01d306dfa4
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Wed Jan 22 14:27:24 2020 +0200
+
+    New files and New Updates
+
+commit 41877a431ece54fad2b1cc61a503304af91ea8d3
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 23:08:30 2020 +0200
+
+    Another try
+
+commit c04e1474f6d3ab7be57c9db62203c891098addca
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 22:38:13 2020 +0200
+
+    Another try
+
+commit f347c5ebbac10a930a81fccbccba5af37e40e175
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 21:07:56 2020 +0200
+
+    New Update
+
+commit 25b6c34ad59dbbdf7db3107bf0c56aebe0a9e4b8
+Merge: afffd73 03072ac
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 20:37:21 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit afffd73538403c2a8bea27529ca50a2913000ae1
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 20:37:11 2020 +0200
+
+    Another try
+
+commit 03072ac388296cb5a644138fbd16d9241229efdf
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 21 20:36:35 2020 +0200
+
+    progress
+
+commit dca867a448f6e178402b654cb72dfaeb34e7ef17
+Merge: 93b3af5 8569179
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 17:47:04 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 93b3af5940838813e2aec561ea8bb6c031c0e985
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 21 17:46:52 2020 +0200
+
+    Update for today
+
+commit 8569179a3fefc679dfbd510221c4f041543bb99e
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 21 17:44:19 2020 +0200
+
+    progress
+
+commit 73dd42a84663f70e01d16f44253001894ceccd2f
+Merge: c1d4ea1 2cd28f0
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 21 14:19:21 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       CMakeLists.txt
+
+commit c1d4ea10e980d2759067960f58d5f4eeaf2a0e7c
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 21 14:18:18 2020 +0200
+
+    progress
+
+commit 2cd28f097bd91fcada7f1faa8cb715b915531820
+Merge: 72bf5fe 63dd8eb
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Mon Jan 20 21:05:33 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       CMakeLists.txt
+
+commit 72bf5fe0fac8fd3be9f3e5fca0f44f9622a89629
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Mon Jan 20 20:58:30 2020 +0200
+
+    Update
+
+commit 63dd8ebf17aeafd76ab4b33150ad2bd3a14a4928
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 19 21:59:31 2020 +0200
+
+    progress
+
+commit cff84278fcd4d4c87de2dd21355c11382dd53763
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 19 20:13:14 2020 +0200
+
+    Update
+
+commit c6f3a9ba72f97ff0d2ea9520902c573c48a681df
+Merge: ac5ed6e 3cc3cf9
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 19 17:40:01 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ac5ed6eaa014cd7a71e60c415a9a838a627821bb
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 19 17:39:43 2020 +0200
+
+    progress
+
+commit 3cc3cf966250c08f9a7b9b703aba071505cf7006
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 19 17:01:36 2020 +0200
+
+    Update
+
+commit 5597f775a44bf14fbb923ded20b31a797d544679
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 19 16:30:22 2020 +0200
+
+    Update
+
+commit a8f22d808d300471ad6c8ac5ad7e4247f83eea98
+Merge: 33ea5b6 065453e
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 19 16:29:09 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 33ea5b6164d3fb5e44b746c4889661045a573f2c
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 19 16:28:55 2020 +0200
+
+    Update
+
+commit 065453e777f1ae5fc60d21c1fefbea7bc61a49b7
+Merge: a6eacfe d448c18
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 19 09:24:44 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a6eacfee22e7ca186f5bf875b153a504dd572cc5
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 19 09:24:30 2020 +0200
+
+    progress
+
+commit d448c187a02e5d2bd885d6b356102a0d3d7dcd33
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 17 22:42:29 2020 +0200
+
+    Update
+
+commit bc8c328ad2f93e5c17ae6e12ca3ce64e80014a25
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 17 14:07:35 2020 +0200
+
+    Update
+
+commit 8ce1d7177c44ea5f57058ebe0c67f985f1e440dd
+Merge: a34e0f7 1bcb8cc
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 17 13:53:59 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       main.cpp
+
+commit a34e0f752aac6fc7cc564d0423142827ca713c91
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Fri Jan 17 13:53:39 2020 +0200
+
+    Update
+
+commit 1bcb8cc22d0bd04e98a916ae211f47aed07511a9
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 16 18:26:12 2020 +0200
+
+    progress
+
+commit 2f1db9861d6474e4e88f290ac24fb0a5bf51744f
+Author: avichaigel <avichaig@gmail.com>
+Date:   Thu Jan 16 17:27:01 2020 +0200
+
+    progress
+
+commit 13eeabf48d2642d387e657567b3b83a2e8b56862
+Merge: 23a0e2a b5e6fe4
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 19:06:55 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 23a0e2ab8c734a8a8819fd0777e153eba8c3202a
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 18:47:34 2020 +0200
+
+    Solver
+
+commit f01a0b42652ad5650bea5c8d91d5031d0651310d
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 19:06:33 2020 +0200
+
+    Solver
+
+commit 340a2a06cbf9d97ea29ae93d68db6aad5d5c1b11
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 19:05:02 2020 +0200
+
+    Solver
+
+commit b5e6fe4d95e52b08343264ed8f2aa4d34b8fe87f
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Tue Jan 14 18:57:23 2020 +0200
+
+    Add files via upload
+
+commit 12e87d677caf465c3310b9f04081389a99ea44ed
+Author: avichaigel <59146878+avichaigel@users.noreply.github.com>
+Date:   Tue Jan 14 18:51:28 2020 +0200
+
+    Add files via upload
+
+commit 814c438d1cd8ffba6c395886ff6d0e8db82a9a67
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 18:51:18 2020 +0200
+
+    Solver
+
+commit c6014dd2cf1f331b9bfe3601630862200836364b
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 18:50:54 2020 +0200
+
+    Solver
+
+commit a8ae68e8ae1002f6ec6f14f3bba88ee5a5a75f4e
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Tue Jan 14 18:49:22 2020 +0200
+
+    Solver
+
+commit ad983af7e19e9d155b0473956af4c03cea846fe9
+Author: avichaigel <59146878+avichaigel@users.noreply.github.com>
+Date:   Tue Jan 14 16:33:44 2020 +0200
+
+    Initial commit
+
+commit 8a087890be2bbb199b0c75bd3eb472a7448f88c8
+Author: avichaigel <59146878+avichaigel@users.noreply.github.com>
+Date:   Tue Jan 14 18:43:25 2020 +0200
+
+    Add files via upload
+
+commit 273bbc123b4d1e3565f60233526a40100211c851
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 14 18:12:00 2020 +0200
+
+    initial commit
+
+commit d41ea9bdf2968d1ca4bfa0baa63ec6f6b0063c44
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 14 18:10:23 2020 +0200
+
+    initial commit
+
+commit 97454e38fe7ea27da5f86bbd9f6dbd7f3c52eec1
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 14 17:15:34 2020 +0200
+
+    initial commit
+
+commit 97de1af70c7f82588b1626da77c8d485e9b20f9c
+Author: avichaigel <avichaig@gmail.com>
+Date:   Tue Jan 14 16:44:32 2020 +0200
+
+    initial commit
