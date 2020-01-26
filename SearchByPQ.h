@@ -53,14 +53,6 @@ public:
             this->openQueue.push(tmpS);
         }
         return flag != 0;
-        /*      ^
-         *      |
-         *simplification
-         *
-         * if (flag) {
-            return true;
-        }
-        return false;*/
     }
 
     void addOpenQueue(State<T> *s){
@@ -83,24 +75,6 @@ public:
     void setPathCost(double pc) {
         this->pathCost = pc;
     }
-
-    /*bool isInClosed(State<T>* s) {
-        vector<State<T>*> v;
-        while(!this->myStates.empty()) {
-            State<T>* tmp = this->myStates.front();
-            this->myStates.pop_back();
-            v.push_back(tmp);
-            if (tmp->getState() == s->getState()) {
-                return true;
-            }
-        }
-        this->myStates = v;
-        return false;
-        *//*if (this->myStates.find(s) != this->myStates.cend) {
-            return true;
-        }
-        return false;*//*
-    }*/
 };
 
 #endif //EX4_SEARCHBYPQ_H
