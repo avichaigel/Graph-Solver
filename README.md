@@ -1,5 +1,5 @@
 
-﻿# Solver
+# Solver
 
 This program is a server that receives from a multiple clients at a time (hence the server is called Parallel Server) a problem - in our case a matrix with costs (weights) for each entry, and start and end point - and sends back a solution - in our case the steps needed to be taken in order to get from start to end by the cheapest way possible.
 
