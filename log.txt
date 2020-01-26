@@ -1,3 +1,46 @@
+commit defa999314d243ffb49c1f04710bf31047c5a067
+Author: avichaigel <avichaig@gmail.com>
+Date:   Sun Jan 26 16:37:19 2020 +0200
+
+    final
+
+commit 48ecf7c2fc2454c016c556a22b0c4f6622c3c40b
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 16:07:50 2020 +0200
+
+    Our Project git log
+
+commit affc353e69f57238627349984e8deafe4ad797d3
+Merge: 77977de 2ebb64b
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 15:55:20 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 77977de268db1adb377330fd5828e9608e389d77
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 15:55:10 2020 +0200
+
+    Our Project git log
+
+commit 2ebb64b8995f00223b779f9525c3662843d8982c
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 15:19:09 2020 +0200
+
+    Update README.md
+
+commit fac8933bdc14721f6ebb6e7e9ab687cf4dd08b65
+Author: OfirNetzer <59169969+OfirNetzer@users.noreply.github.com>
+Date:   Sun Jan 26 15:17:55 2020 +0200
+
+    Update README.md
+
+commit c56e7addecace8cdd08d81e0066752a46b155870
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 13:42:17 2020 +0200
+
+    Our Project git log
+
 commit b5aecb19b85b708506b65eceeb377e0d4077aa37
 Author: Ofir Netzer <ofir.netz@gmail.com>
 Date:   Sun Jan 26 12:05:24 2020 +0200
