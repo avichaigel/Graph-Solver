@@ -26,6 +26,7 @@ public:
         }
         this->myStates.clear();
         this->pQ.push((s->getInitialState()));
+        this->pQ.top()->setCameFrom(s->getInitialState());
         State<T> *n = this->pQ.top();
         n->setMyHueristicDist(s->findDistance(n, s->getGoalState()));
         while (!this->pQ.empty()) {

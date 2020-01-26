@@ -20,6 +20,7 @@ public:
         }
         this->myStates.clear();
         this->addOpenQueue(s->getInitialState());
+        this->openQueue.top()->setCameFrom(s->getInitialState());
         while (!this->openQueue.empty()) {
             State<T> *n = this->openQueue.top();
             this->openQueue.pop();
