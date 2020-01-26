@@ -22,6 +22,8 @@ class BFS: public Searcher<T> {
 public:
 
     vector<State<T> *> search(ISearchable<T> *searchable) override {
+        this->nodesVisited.clear();
+        this->myPath.clear();
         this->nodeVisitedNum = 0;
         this->pathCost = 0;
         // creating the queue

@@ -18,6 +18,8 @@ class DFS: public Searcher<T> {
     vector<State<T>*> myPath;
 
     vector<State<T> *> search(ISearchable<T> *searchable) override {
+        this->nodesVisited.clear();
+        this->myPath.clear();
         this->nodeVisitedNum = 0;
         this->pathCost = 0;
         stack<State<T>*> myStack;
