@@ -2,6 +2,7 @@
 // Created by avichai on 23/01/2020.
 //
 
+#include <iostream>
 #include "MatrixSolver.h"
 
 string MatrixSolver::solve(ISearchable<Point> *problem) {

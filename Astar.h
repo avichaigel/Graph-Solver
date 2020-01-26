@@ -8,7 +8,7 @@
 #include "SearchByPQ.h"
 
 template<class T>
-class AStar : public SearchByPQ<T> {
+ class AStar : public SearchByPQ<T> {
     // compare between costs including their heuristics
     class CostsCompareAstar {
     public:

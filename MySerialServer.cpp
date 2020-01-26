@@ -28,7 +28,7 @@ void start(int port, ClientHandler* c) {
     }
 
     //making socket listen to the port
-    if (listen(socketfd, 5) == -1) { //can also set to SOMAXCON (max connections)
+    if (listen(socketfd, 10) == -1) { //can also set to SOMAXCON (max connections)
         cerr << "Error during listening command" << endl;
     } else {
         cout << "Server is now listening ..." << endl;

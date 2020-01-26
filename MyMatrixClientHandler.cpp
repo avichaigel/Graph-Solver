@@ -27,6 +27,10 @@ void MyMatrixClientHandler::handleClient(int client_socketfd) {
     //if we don't have a solution, solve it and insert it to cache
     if (solution == "-1") {
         Matrix* matrix = createMatrix(matrixLines);
+        if (matrix->getGoalState()->getCost() == -1) {
+            cerr << "ERROR: Goal state's cost is -1, unreachable" << endl;
+            return;
+        }
         solution = this->solver->solve(matrix);
         mutex_lock.lock();
         getCm()->insert(solution);
@@ -83,6 +87,7 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
             auto p = Point(x,y);
             double cost = matrix->getMyMatrix()[x][y]->getCost();
             auto state = new State<Point>(p, cost);
+            state->setCameFrom(NULL);
             matrix->setInitialState(state);
         }
         //if it's goal state
@@ -93,6 +98,7 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
             auto p = Point(x,y);
             double cost = matrix->getMyMatrix()[x][y]->getCost();
             auto state = new State<Point>(p, cost);
+            state->setCameFrom(NULL);
             matrix->setGoalState(state);
         } else {
             vector<State<Point> *> line;
@@ -108,6 +114,7 @@ Matrix* MyMatrixClientHandler::createMatrix(vector<string> matrixLines) {
                 }
                 auto p = Point(i, j);
                 auto state = new State<Point>(p, stoi(num));
+                state->setCameFrom(NULL);
                 line.push_back(state);
                 num = "";
                 j++;
