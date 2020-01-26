@@ -31,7 +31,7 @@ Adapter - In order to seperate between Solver interface and Server interface, we
 **Server.h** -   An interface that contains a virtual method "open" and "close".
 
 
-*Implementation side:*andle
+*Implementation side:* 
 
 **FileCacheManager.h** -  Read and Write solutions from/to the disk. if it's not the first run of the program it reads the old solutions and upload them to its inner hash map. 
 **BestFS.h** - solves the matrix problem using an implementation of Best First Search algorithm.
