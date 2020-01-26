@@ -1,3 +1,9 @@
+commit b62376e9317ec1adfaca72459342f41ae0fa4348
+Author: Ofir Netzer <ofir.netz@gmail.com>
+Date:   Sun Jan 26 17:24:49 2020 +0200
+
+    Our Project git log
+
 commit defa999314d243ffb49c1f04710bf31047c5a067
 Author: avichaigel <avichaig@gmail.com>
 Date:   Sun Jan 26 16:37:19 2020 +0200
