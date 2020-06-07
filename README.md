@@ -1,7 +1,7 @@
 
 # Solver
 
-This program is a server that receives from a multiple clients at a time (hence the server is called Parallel Server) a problem - in our case a matrix with costs (weights) for each entry, and start and end point - and sends back a solution - in our case the steps needed to be taken in order to get from start to end by the cheapest way possible.
+This program is a server that receives from multiple clients at a time (hence the server is called Parallel Server) a problem - in our case a matrix with costs (weights) for each entry, and start and end point - and sends back a solution - in our case the steps needed to be taken in order to get from start to end by the cheapest way possible.
 
 At first we create a File Cache Manager that connects between a problem to a solution file in our disk using a hash map.
 Every time we run the program it checks all the available solutions we already have on our disk and upload our map with these solutions.
